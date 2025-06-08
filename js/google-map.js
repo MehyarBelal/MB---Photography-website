@@ -5,7 +5,7 @@ function init() {
     // Basic options for a simple Google Map
     // For more options see: https://developers.google.com/maps/documentation/javascript/reference#MapOptions
     // var myLatlng = new google.maps.LatLng(40.71751, -73.990922);
-    var myLatlng = new google.maps.LatLng(40.69847032728747, -73.9514422416687);
+var myLatlng = new google.maps.LatLng(-37.8136, 144.9631); 
     // 39.399872
     // -8.224454
     
@@ -99,8 +99,13 @@ function init() {
             }
           ]
     };
-
-    
+    // dark mode code below
+var mapOptions = {
+  zoom: 13,
+  center: myLatlng,
+  scrollwheel: false,
+  styles: [] // removes the dark mode
+};
 
     // Get the HTML DOM element that will contain your map 
     // We are using a div with id="map" seen below in the <body>

@@ -659,23 +659,30 @@
     <script src="js/google-map.js"></script>
     <script src="js/main.js"></script>
 
-
-	<script>
+<script>
   function initMap() {
-  var melbourne = { lat: -37.8136, lng: 144.9631 };
-  var map = new google.maps.Map(document.getElementById("map"), {
-    zoom: 13,
-    center: melbourne,
-  });
+    const melbourne = { lat: -37.8136, lng: 144.9631 };
 
-  new google.maps.Marker({
-    position: melbourne,
-    map: map,
-    title: "Mehyar Belal Photography"
-  });
-}
+    const map = new google.maps.Map(document.getElementById("map"), {
+      zoom: 13,
+      center: melbourne,
+      styles: [], // Clears any dark mode styling
+      mapTypeControl: true,
+      scrollwheel: false,
+    });
 
+    new google.maps.Marker({
+      position: melbourne,
+      map: map,
+      title: "Mehyar Belal Photography",
+    });
+  }
 </script>
+
+<script async defer
+  src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap">
+</script>
+
 
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA9ZnrPDEFBPt5UXF9YltxBb82Fny-E288&callback=initMap" async defer></script>
 
