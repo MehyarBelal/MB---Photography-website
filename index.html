@@ -163,7 +163,10 @@ body.loaded #preloader {
 
 <script>
   window.addEventListener('DOMContentLoaded', function () {
-    document.body.classList.add('loaded');
+    // Wait 1.5 seconds before fading out (1500ms)
+    setTimeout(function () {
+      document.body.classList.add('loaded');
+    }, 900); 
   });
 </script>
 
