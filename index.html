@@ -173,9 +173,15 @@ body.loaded #preloader {
 
 		<!-- Start Home Section -->
 <section id="home" class="hero-wrap js-fullheight"
-  style="background-image: url('images/assets/Home\ banner.webp');"
-  data-stellar-background-ratio="0.8"
-  data-stellar-background-position="60% 50%">
+  style="
+    background-image:
+      linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)),
+      url('images/assets/Home banner.webp');
+    background-size: cover;
+    background-position: 60% 50%;
+    background-repeat: no-repeat;
+  "
+  data-stellar-background-ratio="0.8">
 
       <div class="overlay"></div>
       <div class="container">
@@ -184,14 +190,29 @@ body.loaded #preloader {
         <div class="row no-gutters slider-text js-fullheight align-items-center justify-content-center">
           <div class="col-lg-7 ftco-animate d-flex align-items-center">
 
+			<style>
+
+				.header-section {
+					display: flex;
+					justify-content: center;
+					align-items: center;
+					flex-direction: column;
+				}
+
+				.primary-logo {
+					width: 670px;
+					height: auto;
+					margin-bottom: 20px;
+				}
+				
+
+			</style>
 			
-          	<div class="text text-center">
+          	<div class="text text-center header-section" >
 
-				  <img src="./images/assets/Logo white.png" width="80px" height="80px" alt="Logo" style="  display: block;
-  margin: 0 auto 10px;">
 
-          		<h1 class="logo"><a href="index.html">Mehyar Belal<small>Photographer / Melbourne</small></a></h1>
-		  				<h1 class="mb-4">Captured <br>by Mehyar Belal</h1>
+<img class="primary-logo"src="./images/Web Use (RGB)/PNG/Primary Logo in White@4x-8.png" alt="">
+		  		
 		  				<p class="mb-4">Capturing unscripted beauty in motion — from Melbourne’s streets to its quiet corners.
 </p>
 <p class="mt-5">
