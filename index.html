@@ -275,8 +275,43 @@ Nothing staged, nothing forced - just moments as they reveal themselves.
 
 	
 
-	<style>.services-text {
-		
+	<style>
+	
+	
+	/* Universal button styling */
+.btn-custom, 
+.btn-primary {
+    background: transparent !important;
+    color: #ffffff !important;
+    border: 2px solid #E2E2E2 !important;
+   
+    padding: 12px 28px !important;
+    font-weight: 500 !important;
+    letter-spacing: 0.5px;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+}
+
+/* Hover state */
+.btn-custom:hover,
+.btn-primary:hover {
+    background: #E2E2E2 !important;
+    color: #000000 !important;
+    border-color: #E2E2E2 !important;
+}
+
+/* Remove Bootstrap default styling */
+.btn-primary {
+    box-shadow: none !important;
+}
+
+.btn-custom {
+    border: 2px solid rgba(226, 226, 226, 0.8) !important;
+}
+
+	
+	.services-text {
+
     max-width: 600px;
     margin: 0 auto;
     line-height: 1.6;
@@ -293,7 +328,9 @@ a{
 
 .progress-circle .border-primary {
     border-color: #E2E2E2 !important;
+	color: #E2E2E2 !important;
 }
+
 
 #services.ftco-section {
     padding-top: 1em !important;
