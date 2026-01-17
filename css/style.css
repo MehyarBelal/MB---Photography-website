@@ -4,6 +4,50 @@
  * Copyright 2011-2019 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
+
+
+<style>
+
+	/* Gallery: show full horizontal images (no cropping) */
+#work .model.img {
+  background-size: contain !important;
+  background-repeat: no-repeat !important;
+  background-position: center !important;
+  background-color: #000; /* or #27292b to match your site */
+  min-height: 320px;      /* adjust */
+}
+
+
+
+
+
+/* Fix gallery tile sizing */
+#work .model.img {
+  min-height: 45vh;
+  background-size: contain !important;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: #111; /* matches your dark theme */
+}
+
+@media (max-width: 768px) {
+  #work .model.img {
+    min-height: 35vh;
+  }
+}
+
+
+#work .model.img {
+  min-height: 45vh;
+  background-size: cover !important;
+  background-position: center center !important;
+  background-repeat: no-repeat !important;
+}
+
+
+
+</style>
+
 :root {
   --blue: #007bff;
   --indigo: #6610f2;
