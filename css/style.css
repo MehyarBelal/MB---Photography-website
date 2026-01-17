@@ -6,7 +6,7 @@
  */
 
 
-<style>
+
 
 	/* Gallery: show full horizontal images (no cropping) */
 #work .model.img {
@@ -46,7 +46,7 @@
 
 
 
-</style>
+
 
 :root {
   --blue: #007bff;
