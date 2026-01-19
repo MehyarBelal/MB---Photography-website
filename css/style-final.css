@@ -6,25 +6,6 @@
  */
 
 
-#work .model.img {
-  min-height: 45vh !important;
-  background-size: cover !important;
-  background-position: center center !important;
-  background-repeat: no-repeat !important;
-  background-color: #111 !important;
-}
-
-
-
-
-#work .model.img {
-  min-height: 45vh;
-  background-size: cover !important;     /* <-- KEEP THIS */
-  background-position: center center !important;
-  background-repeat: no-repeat !important;
-  background-color: #111;
-}
-
 @media (max-width: 768px) {
   #work .model.img {
     min-height: 35vh;
