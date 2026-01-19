@@ -17,6 +17,26 @@
 
 
 
+#work .model.img {
+  min-height: 45vh;
+  background-size: cover !important;     /* <-- KEEP THIS */
+  background-position: center center !important;
+  background-repeat: no-repeat !important;
+  background-color: #111;
+}
+
+@media (max-width: 768px) {
+  #work .model.img {
+    min-height: 35vh;
+  }
+
+  .img-video {
+    height: 250px !important;
+    margin-bottom: 4em !important;
+
+  }
+}
+
 
 
 
