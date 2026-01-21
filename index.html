@@ -1096,5 +1096,45 @@ Available across the city and surrounding suburbs</p>
     text-shadow: 0 2px 6px rgba(0,0,0,0.6);
 }
 
+/* MOBILE FIX — captions bottom-left over image */
+@media (max-width: 767px) {
+
+    #work .model {
+        position: relative;
+    }
+
+    /* Move the description container to the bottom-left */
+    #work .model .desc {
+        position: absolute !important;
+        bottom: 25px;
+        left: 12px;
+        margin: 0 !important;
+        padding: 0 !important;
+        width: auto !important;
+        z-index: 10;
+    }
+
+    /* Ensure text stays aligned left */
+    #work .model .text {
+        text-align: left !important;
+    }
+
+    #work .model .text span,
+    #work .model .text h2,
+    #work .model .text a {
+        color: #fff !important;
+        text-shadow: 0 2px 8px rgba(0,0,0,0.65);
+    }
+
+    /* Make sure image tiles remain visible under the text */
+    #work .model.img::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.15); /* optional subtle dark overlay */
+        z-index: 5;
+    }
+}
+
 
 </style>
