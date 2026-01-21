@@ -1065,6 +1065,36 @@ Available across the city and surrounding suburbs</p>
 
     background-color: #000 !important;
 }
+/* Make each gallery tile a positioning container */
+#work .model {
+    position: relative;
+}
+
+/* Move caption INSIDE bottom-left of the tile */
+#work .model .desc {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    z-index: 10;
+
+    margin: 0;          /* remove extra spacing */
+    padding: 0;
+    width: auto;
+}
+
+/* Ensure the text block doesn't stretch full width */
+#work .model .text {
+    text-align: left;
+    width: auto;
+}
+
+/* Improve readability on all images */
+#work .model .text span,
+#work .model .text h2,
+#work .model .text a {
+    color: #fff !important;
+    text-shadow: 0 2px 6px rgba(0,0,0,0.6);
+}
 
 
 </style>
