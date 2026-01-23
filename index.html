@@ -1286,6 +1286,62 @@ display: none !important;
 }
 
 
+
+
+/* DEBUG: Force RED background to reveal source of black bar */
+
+/* REMOVE bootstrap gutters fully */
+#work .row {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+}
+
+#work .row > [class*="col-"] {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+}
+
+/* FORCE every tile to behave consistently */
+#work .model,
+#work .model.img {
+    position: relative;
+    width: 100%;
+    padding: 0 !important;
+    margin: 0 !important;
+
+    /* prevents the overlay from bleeding outside */
+    overflow: hidden !important;
+
+    /* smoother rendering */
+    box-sizing: border-box;
+}
+
+/* FIX the right-side black bar: ensure tiles fill full width */
+#work .model.img {
+    background-size: cover !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+
+    /* remove any browser-applied ghost padding */
+    border: none !important;
+    box-shadow: none !important;
+}
+
+/* FORCE a clean even height (your gallery uses 3-per-row) */
+#work .model.img {
+    aspect-ratio: 3 / 2;   /* perfect consistent rows */
+    height: auto !important;
+}
+
+/* FIX overlay bleed */
+#work .model.img::before {
+    position: absolute;
+    content: "";
+    inset: 0;    /* replaces top/left/bottom/right */
+    background: rgba(0, 0, 0, 0.25); /* your overlay effect */
+    pointer-events: none;
+}
+
 @media (max-width: 768px) {
 #work .model.img {
   min-height: 30vh !important;
@@ -1296,10 +1352,5 @@ display: none !important;
     margin-bottom: 4em !important;
   }
 }
-
-
-/* DEBUG: Force RED background to reveal source of black bar */
-
-
 
 </style>
