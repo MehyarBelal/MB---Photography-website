@@ -194,6 +194,90 @@ body.loaded #preloader {
   to { opacity: 1; transform: translateY(0); }
 }
 
+
+
+
+
+
+
+
+/* PRELOADER WRAPPER */
+#preloader {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #0a0a12, #111927 60%, #0b0e1a);
+  z-index: 999999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 1;
+  animation: fadeOut 1.6s ease forwards;
+  animation-delay: 3.8s; /* adjust overall length here */
+}
+
+/* CENTER LOGO */
+.loader-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.loader-logo {
+  width: 120px;
+  opacity: 0;
+  filter: blur(12px);
+  transform: scale(1.08);
+  animation:
+    logoFocus 3.2s ease forwards,
+    glowPulse 2.4s ease-in-out infinite alternate;
+  animation-delay: 0.3s;
+}
+
+/* CAMERA FOCUS EFFECT */
+@keyframes logoFocus {
+  0% {
+    opacity: 0;
+    filter: blur(12px);
+    transform: scale(1.10);
+  }
+  30% {
+    opacity: 0.4;
+    filter: blur(6px);
+    transform: scale(1.05);
+  }
+  70% {
+    opacity: 0.85;
+    filter: blur(2px);
+    transform: scale(1.01);
+  }
+  100% {
+    opacity: 1;
+    filter: blur(0);
+    transform: scale(1);
+  }
+}
+
+/* SOFT GLOW PULSE */
+@keyframes glowPulse {
+  0% {
+    filter: drop-shadow(0 0 3px rgba(0,150,255,0.15));
+  }
+  100% {
+    filter: drop-shadow(0 0 12px rgba(0,150,255,0.35));
+  }
+}
+
+/* FINAL FADE OUT */
+@keyframes fadeOut {
+  0% { opacity: 1; pointer-events: all; }
+  100% { opacity: 0; pointer-events: none; }
+}
+
+
+
 </style>
 
 
@@ -202,7 +286,7 @@ body.loaded #preloader {
     // Wait 1.5 seconds before fading out (1500ms)
     setTimeout(function () {
       document.body.classList.add('loaded');
-    }, 1200); 
+    }, 1300); 
   });
 </script>
 
