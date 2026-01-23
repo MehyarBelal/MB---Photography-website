@@ -214,7 +214,7 @@ body.loaded #preloader {
 		  				<p class="mb-4">Capturing unscripted beauty in motion - from Melbourne’s streets to its quiet corners.
 </p>
 <p class="mt-5">
-  <a href="#contact" class="btn-custom ">Book a Shoot <span class="ion-ios-arrow-round-forward"></span></a>
+  <a href="#contact" class="btn-custom">Book a Shoot <span class="ion-ios-arrow-round-forward"></span></a>
 </p>            </div>
           </div>
         </div>
@@ -1356,6 +1356,120 @@ display: none !important;
 .about-image-fix {
     box-shadow: 0 10px 30px rgba(0,0,0,0.6),
               0 0 20px rgba(255,255,255,0.08);
+}
+
+#work h2::after {
+    content: "";
+    display: block;
+    width: 60px;
+    height: 3px;
+    margin: 8px auto 0;
+    background: linear-gradient(90deg, #2A2F6A, #3A6FF7, #00D4FF);
+    border-radius: 2px;
+}
+
+/* Gradient Outline Button – For “BOOK A SHOOT” only */
+.btn-light {
+    background: transparent !important;
+    color: #ffffff !important;
+    border-width: 2px !important;
+    border-style: solid !important;
+    border-radius: 4px;
+    padding: 10px 26px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+
+    /* Gradient border */
+    border-image: linear-gradient(90deg, #2A2F6A, #3A6FF7, #00D4FF) 1;
+    transition: 0.3s ease;
+}
+
+.btn-light:hover {
+    /* Fill with gradient on hover */
+    background-image: linear-gradient(90deg, #2A2F6A, #3A6FF7, #00D4FF);
+    color: #000 !important;
+    border-image: none; /* Prevent outline conflict */
+}
+
+
+#work h3::after,
+#studies h3::after,
+.studies-title::after {
+    content: "";
+    display: block;
+    width: 60px;
+    height: 3px;
+    margin: 8px auto 0;
+    background: linear-gradient(90deg, #2A2F6A, #3A6FF7, #00D4FF);
+    border-radius: 2px;
+}
+
+
+/* Gradient Outline Button – applied to btn-custom */
+.btn-custom {
+    background: transparent !important;
+    color: #ffffff !important;
+    border-width: 2px !important;
+    border-style: solid !important;
+    border-radius: 4px;
+    padding: 12px 28px !important;
+    font-weight: 600 !important;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+
+    border-image: linear-gradient(90deg, #2A2F6A, #3A6FF7, #00D4FF) 1;
+    transition: 0.35s ease;
+}
+
+.btn-custom:hover {
+    background-image: linear-gradient(90deg, #2A2F6A, #3A6FF7, #00D4FF);
+    color: #000000 !important;
+    border-image: none;
+}
+
+/* FINAL OVERRIDE — GRADIENT BUTTON WORKS 100% */
+.btn-custom {
+    background: transparent !important;
+    color: #ffffff !important;
+
+    /* REMOVE old border override */
+    border: 2px solid transparent !important;
+
+    /* TRUE gradient border */
+    border-image: linear-gradient(90deg, #2A2F6A, #3A6FF7, #00D4FF) 1 !important;
+
+    border-radius: 4px;
+    padding: 12px 28px !important;
+    font-weight: 600 !important;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+
+    transition: 0.35s ease;
+}
+
+/* Hover fill */
+.btn-custom:hover {
+    background-image: linear-gradient(90deg, #2A2F6A, #3A6FF7, #00D4FF) !important;
+    color: #000 !important;
+    border-image: none !important; 
+}
+
+
+.contact-section .box .icon span {
+
+    color: linear-gradient(90deg, #2A2F6A, #3A6FF7, #00D4FF) 1 !important;
+
+} 
+
+
+.ftco-section h2::after {
+    content: "";
+    display: block;
+    width: 40%;
+    height: 3px;
+    margin: 8px auto 0;
+    background: linear-gradient(90deg, #2A2F6A, #3A6FF7, #00D4FF);
+    border-radius: 2px;
 }
 
 </style>
