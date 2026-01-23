@@ -6,22 +6,6 @@
  */
 
 
-@media (max-width: 768px) {
-  #work .model.img {
-    min-height: 35vh;
-  }
-
-  .img-video {
-    height: 250px !important;
-    margin-bottom: 4em !important;
-
-  }
-}
-
-
-
-
-
 
 :root {
   --blue: #007bff;
