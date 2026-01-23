@@ -967,7 +967,7 @@ Available across the city and surrounding suburbs</p>
                 <textarea name="" id="" cols="30" rows="7" class="form-control" placeholder="Message"></textarea>
               </div>
               <div class="form-group">
-                <input type="submit" value="Send Message" class="btn btn-primary py-3 px-5">
+                <input type="submit" value="Send Message" class="btn contact-submit-btn btn-primary py-3 px-5">
               </div>
 
 			  <p>Based in Melbourne -- available across the city and surrounding suburbs.</p>
@@ -980,6 +980,36 @@ Available across the city and surrounding suburbs</p>
 
 	  <style>
 	  
+    /* Centered button with gradient border */
+.contact-submit-btn {
+    background: transparent !important;
+    color: #ffffff !important;
+    border-radius: 4px;
+    padding: 14px 34px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    border-width: 2px;
+    border-style: solid;
+    cursor: pointer;
+    border-radius: 50px;
+
+    border-image: linear-gradient(90deg,#2A2F6A,#3A6FF7,#00D4FF) 1;
+
+    transition: 0.35s ease;
+}
+
+/* Hover: fill with gradient */
+.contact-submit-btn:hover {
+    background: linear-gradient(90deg,#2A2F6A,#3A6FF7,#00D4FF) !important;
+    border-image: none !important; 
+    color: #ffffff !important;
+}
+
+/* Make sure the button is centered even if Bootstrap interferes */
+.form-group.text-center {
+    text-align: center !important;
+}
+
 
 /* FINAL gallery tile styling (consistent everywhere) */
 
