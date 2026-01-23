@@ -247,7 +247,7 @@ body.loaded #preloader {
     			</div>
     			<div class="col-md-6 col-lg-6 pl-md-5">
 	          <div class="heading-section ftco-animate">
-	            <h2 class="mb-4">About Me<br>Mehyar Visuals</h2>
+	            <h2 class="mb-4">About<br>Mehyar Visuals</h2>
 	            <p>I’m Mehyar - a Melbourne photographer obsessed with real moments.
 I chase light, movement, and the small truths people overlook.
 Nothing staged, nothing forced - just moments as they reveal themselves.
@@ -1358,118 +1358,27 @@ display: none !important;
               0 0 20px rgba(255,255,255,0.08);
 }
 
-#work h2::after {
+/* Universal Gradient Underline for all section titles */
+.section-title::after,
+.heading-section h2::after,
+#work h2::after,
+#about h2::after,
+#services h2::after,
+#contact h2::after {
     content: "";
     display: block;
-    width: 60px;
+    width: 60px;          /* << THE FIX: same size everywhere */
     height: 3px;
-    margin: 8px auto 0;
-    background: linear-gradient(90deg, #2A2F6A, #3A6FF7, #00D4FF);
-    border-radius: 2px;
-}
-
-/* Gradient Outline Button – For “BOOK A SHOOT” only */
-.btn-light {
-    background: transparent !important;
-    color: #ffffff !important;
-    border-width: 2px !important;
-    border-style: solid !important;
-    border-radius: 4px;
-    padding: 10px 26px;
-    font-weight: 600;
-    letter-spacing: 0.5px;
-
-    /* Gradient border */
-    border-image: linear-gradient(90deg, #2A2F6A, #3A6FF7, #00D4FF) 1;
-    transition: 0.3s ease;
-}
-
-.btn-light:hover {
-    /* Fill with gradient on hover */
-    background-image: linear-gradient(90deg, #2A2F6A, #3A6FF7, #00D4FF);
-    color: #000 !important;
-    border-image: none; /* Prevent outline conflict */
-}
-
-
-#work h3::after,
-#studies h3::after,
-.studies-title::after {
-    content: "";
-    display: block;
-    width: 60px;
-    height: 3px;
-    margin: 8px auto 0;
+    margin: 10px auto 0;  /* centers it */
     background: linear-gradient(90deg, #2A2F6A, #3A6FF7, #00D4FF);
     border-radius: 2px;
 }
 
 
-/* Gradient Outline Button – applied to btn-custom */
-.btn-custom {
-    background: transparent !important;
-    color: #ffffff !important;
-    border-width: 2px !important;
-    border-style: solid !important;
-    border-radius: 4px;
-    padding: 12px 28px !important;
-    font-weight: 600 !important;
-    letter-spacing: 0.5px;
-    text-transform: uppercase;
-
-    border-image: linear-gradient(90deg, #2A2F6A, #3A6FF7, #00D4FF) 1;
-    transition: 0.35s ease;
-}
-
-.btn-custom:hover {
-    background-image: linear-gradient(90deg, #2A2F6A, #3A6FF7, #00D4FF);
-    color: #000000 !important;
-    border-image: none;
-}
-
-/* FINAL OVERRIDE — GRADIENT BUTTON WORKS 100% */
-.btn-custom {
-    background: transparent !important;
-    color: #ffffff !important;
-
-    /* REMOVE old border override */
-    border: 2px solid transparent !important;
-
-    /* TRUE gradient border */
-    border-image: linear-gradient(90deg, #2A2F6A, #3A6FF7, #00D4FF) 1 !important;
-
-    border-radius: 4px;
-    padding: 12px 28px !important;
-    font-weight: 600 !important;
-    letter-spacing: 0.5px;
-    text-transform: uppercase;
-
-    transition: 0.35s ease;
-}
-
-/* Hover fill */
-.btn-custom:hover {
-    background-image: linear-gradient(90deg, #2A2F6A, #3A6FF7, #00D4FF) !important;
-    color: #000 !important;
-    border-image: none !important; 
-}
-
-
-.contact-section .box .icon span {
-
-    color: linear-gradient(90deg, #2A2F6A, #3A6FF7, #00D4FF) 1 !important;
-
-} 
-
-
-.ftco-section h2::after {
-    content: "";
+#about h2 {
+    text-align: center !important;
     display: block;
-    width: 40%;
-    height: 3px;
-    margin: 8px auto 0;
-    background: linear-gradient(90deg, #2A2F6A, #3A6FF7, #00D4FF);
-    border-radius: 2px;
+    width: 100%;
 }
 
 </style>
