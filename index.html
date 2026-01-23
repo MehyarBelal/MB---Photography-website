@@ -202,6 +202,7 @@ body.loaded #preloader {
 
 
 /* PRELOADER WRAPPER */
+/* PRELOADER CONTAINER (no auto fade here) */
 #preloader {
   position: fixed;
   left: 0;
@@ -214,44 +215,35 @@ body.loaded #preloader {
   justify-content: center;
   align-items: center;
   opacity: 1;
-  animation: fadeOut 1.6s ease forwards;
-  animation-delay: 3.8s; /* adjust overall length here */
+  transition: opacity 1.2s ease;  /* actual fade happens HERE */
+  pointer-events: all;
 }
 
-/* CENTER LOGO */
-.loader-content {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+/* When page is ready */
+body.loaded #preloader {
+  opacity: 0;
+  pointer-events: none;
 }
 
-.loader-logo {
+/* LOGO EFFECT */
+.preloader-logo {
   width: 120px;
   opacity: 0;
   filter: blur(12px);
   transform: scale(1.08);
-  animation:
-    logoFocus 3.2s ease forwards,
-    glowPulse 2.4s ease-in-out infinite alternate;
-  animation-delay: 0.3s;
+  animation: logoFocus 1.8s ease forwards;
 }
 
-/* CAMERA FOCUS EFFECT */
 @keyframes logoFocus {
   0% {
     opacity: 0;
     filter: blur(12px);
     transform: scale(1.10);
   }
-  30% {
-    opacity: 0.4;
-    filter: blur(6px);
+  40% {
+    opacity: 0.5;
+    filter: blur(5px);
     transform: scale(1.05);
-  }
-  70% {
-    opacity: 0.85;
-    filter: blur(2px);
-    transform: scale(1.01);
   }
   100% {
     opacity: 1;
@@ -260,34 +252,47 @@ body.loaded #preloader {
   }
 }
 
-/* SOFT GLOW PULSE */
-@keyframes glowPulse {
-  0% {
-    filter: drop-shadow(0 0 3px rgba(0,150,255,0.15));
-  }
-  100% {
-    filter: drop-shadow(0 0 12px rgba(0,150,255,0.35));
-  }
+/* DOT ANIMATION */
+.loader:before,
+.loader:after {
+  content: '';
+  width: 15px;
+  height: 15px;
+  display: block;
+  position: relative;
+  margin: 10px auto;
+  border-radius: 50%;
+  animation: left 1s infinite ease-in-out;
 }
 
-/* FINAL FADE OUT */
-@keyframes fadeOut {
-  0% { opacity: 1; pointer-events: all; }
-  100% { opacity: 0; pointer-events: none; }
+.loader:before {
+  background: white;
+}
+.loader:after {
+  background: #1E293B;
+  animation: right 900ms infinite ease-in-out;
 }
 
-
+@keyframes right {
+  0%, 100% { transform: translate(-15px); }
+  50% { transform: translate(15px); }
+}
+@keyframes left {
+  0%, 100% { transform: translate(15px); }
+  50% { transform: translate(-15px); }
+}
 
 </style>
 
 
 <script>
-  window.addEventListener('DOMContentLoaded', function () {
-    // Wait 1.5 seconds before fading out (1500ms)
-    setTimeout(function () {
-      document.body.classList.add('loaded');
-    }, 1320); 
+  window.addEventListener('load', function() {
+      // let the loader run for nice effect
+      setTimeout(() => {
+          document.body.classList.add('loaded');
+      }, 1800);  // Adjust 1.8s to make loader stay longer or shorter
   });
+  
 </script>
 
 		<!-- Start Home Section -->
@@ -1566,6 +1571,36 @@ display: none !important;
     background: linear-gradient(90deg, #2A2F6A, #3A6FF7, #00D4FF);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+}
+
+.form-group input[type="submit"] {
+    display: block;
+    margin: 20px auto 0 auto; /* centers it */
+    background: linear-gradient(135deg,#4f46e5,#3b82f6,#06b6d4);
+    border: none;
+    border-radius: 6px;
+    padding: 12px 30px;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+.section-title {
+    text-align: center;
+    font-weight: 600;
+    letter-spacing: 3px;
+    margin-bottom: 20px;
+    position: relative;
+    display: inline-block;
+}
+
+.section-title::after {
+    content: "";
+    display: block;
+    width: 60px; /* SET THE SIZE HERE */
+    height: 3px;
+    margin: 8px auto 0 auto; /* center */
+    border-radius: 3px;
+    background: linear-gradient(90deg, #4f46e5, #3b82f6, #06b6d4);
 }
 
 
