@@ -1069,6 +1069,41 @@ Available across the city and surrounding suburbs</p>
 display: none !important;
 }
 
+
+
+/* Remove all gutters fully */
+#work .row.no-gutters {
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
+
+#work .row.no-gutters > [class*="col-"] {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
+#work .model {
+    padding-top: 1% !important;
+    margin: 0 !important;
+    border: none !important;
+    box-shadow: none !important;
+}
+
+#work .model:before {
+    background: transparent !important;
+}
+.model:before {
+    position: absolute;
+    content: '';
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0,0,0,0.3);
+}
+
+
+
 </style>
     </section>
 		<!-- End Contact Section -->
