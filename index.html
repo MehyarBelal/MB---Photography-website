@@ -286,36 +286,32 @@ body.loaded #preloader {
 
 
 <script>
-  window.addEventListener('load', function() {
-      // let the loader run for nice effect
-      setTimeout(() => {
-          document.body.classList.add('loaded');
-      }, 1800);  // Adjust 1.8s to make loader stay longer or shorter
-  });
-  
-</script>
-
-<script>
-let preloadTriggered = false;
-
 function hidePreloader() {
-  if (preloadTriggered) return;
-  preloadTriggered = true;
   document.body.classList.add('loaded');
 }
 
-/* 1) Trigger early when HTML is parsed */
-document.addEventListener("DOMContentLoaded", () => {
-  setTimeout(hidePreloader, 1600);  // same timing as desktop
-});
+/* Detect if mobile */
+const isMobile = /Android|iPhone|iPad|iPod|Opera Mini|IEMobile|WPDesktop/i.test(navigator.userAgent);
 
-/* 2) Backup kill-switch if load takes too long */
-window.addEventListener("load", () => {
-  setTimeout(hidePreloader, 200);  // just in case
-});
+/* MOBILE — fade out earlier */
+if (isMobile) {
+  document.addEventListener("DOMContentLoaded", () => {
+    setTimeout(hidePreloader, 1400); // good timing for phones
+  });
 
-/* 3) Hard timeout (guarantees no long stall on slow 4G) */
-setTimeout(hidePreloader, 3500);
+  // Safety timeout (slow networks)
+  setTimeout(hidePreloader, 3000);
+}
+
+/* DESKTOP — keep original slower fade */
+else {
+  window.addEventListener("load", () => {
+    setTimeout(hidePreloader, 2200); // SAME FEEL AS BEFORE
+  });
+
+  // Safety timeout for huge images
+  setTimeout(hidePreloader, 4500);
+}
 </script>
 
 
