@@ -157,6 +157,43 @@ body.loaded #preloader {
   opacity: 0;
   pointer-events: none;
 }
+
+
+
+.preloader-logo {
+  opacity: 0;
+  animation: fadeLogo 2.4s ease-out forwards 0.8s;
+}
+
+@keyframes fadeLogo {
+  0% {
+    opacity: 0;
+    transform: translateY(10px);
+    filter: blur(4px);
+  }
+  40% {
+    opacity: 0.35;
+    transform: translateY(4px);
+    filter: blur(2px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+  }
+}
+
+
+.preloader-logo {
+  opacity: 0;
+  animation: fadeLogo 1.2s ease forwards 0.3s;
+}
+
+@keyframes fadeLogo {
+  from { opacity: 0; transform: translateY(5px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
 </style>
 
 
@@ -165,7 +202,7 @@ body.loaded #preloader {
     // Wait 1.5 seconds before fading out (1500ms)
     setTimeout(function () {
       document.body.classList.add('loaded');
-    }, 900); 
+    }, 1200); 
   });
 </script>
 
