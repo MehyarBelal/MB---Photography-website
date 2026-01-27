@@ -1634,5 +1634,43 @@ background: #3b82f6 !important;
 .navbar .nav-menu li .dot::after {
 border: 2px solid #E2E2E2 !important;
 }
-</style>
 
+/* FIX MOBILE POPUP CLICK — forces tap through */
+#work .model .icon,
+#work .model .image-popup {
+    pointer-events: auto !important;
+    z-index: 999 !important;
+}
+
+/* ensure overlays don't block taps */
+#work .model.img::after,
+#work .model.img::before {
+    pointer-events: none !important;
+}
+
+
+
+/* SIMPLE NON-LAGGY HOVER */
+#work .model {
+    overflow: hidden;
+    position: relative;
+}
+
+#work .model.img {
+    transition: transform 0.35s ease, filter 0.35s ease;
+}
+
+/* Desktop hover */
+@media (hover: hover) {
+    #work .model:hover .img {
+        transform: scale(1.03);
+        filter: brightness(0.88);
+    }
+}
+
+/* Remove ugly default overlay */
+#work .model:before {
+    display: none !important;
+}
+
+</style>
