@@ -1141,14 +1141,14 @@ Available across the city and surrounding suburbs</p>
     cursor: pointer;
     border-radius: 50px;
 
-    border-image: linear-gradient(90deg,#2A2F6A,#3A6FF7,#00D4FF) 1;
+   
 
     transition: 0.35s ease;
 }
 
 /* Hover: fill with gradient */
 .contact-submit-btn:hover {
-    background: linear-gradient(90deg,#2A2F6A,#3A6FF7,#00D4FF) !important;
+   
     border-image: none !important; 
     color: #ffffff !important;
 }
@@ -1542,20 +1542,6 @@ padding:  0px 0 00px !;
 }
 
 /* Universal Gradient Underline for all section titles */
-.section-title::after,
-.heading-section h2::after,
-#work h2::after,
-#about h2::after,
-#services h2::after,
-#contact h2::after {
-    content: "";
-    display: block;
-    width: 60px;          /* << THE FIX: same size everywhere */
-    height: 3px;
-    margin: 10px auto 0;  /* centers it */
-    background: linear-gradient(90deg, #2A2F6A, #3A6FF7, #00D4FF);
-    border-radius: 2px;
-}
 
 
 #about h2 {
@@ -2441,8 +2427,12 @@ html, body {
      ABOUT MOBILE FIX
      ============================ */
   #about h2 {
-    font-size: 26px !important;
+    font-size: 20px !important;
     line-height: 1.15 !important;
+    text-align: center !important;
+  }
+
+  .text{
     text-align: center !important;
   }
 
