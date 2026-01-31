@@ -2223,39 +2223,6 @@ html, body {
   }
 }
 
-/* ============================================
-   MV — CSS ONLY EDITORIAL GALLERY (NO HTML CHANGES)
-   Works with your current: .row.no-gutters + .col-md-4
-============================================ */
-
-/* add breathing room + padding around full gallery area */
-#work .container-fluid{
-  padding-left: 24px !important;
-  padding-right: 24px !important;
-}
-
-/* remove bootstrap no-gutters crushing */
-#work .row.no-gutters{
-  margin-left: 0 !important;
-  margin-right: 0 !important;
-
-  /* IMPORTANT: switch from rigid row to masonry columns */
-  display: block !important;
-  column-count: 3;
-  column-gap: 22px;       /* breathing room */
-}
-
-/* each bootstrap col becomes a masonry item */
-#work .row.no-gutters > [class*="col-"]{
-  float: none !important;
-  width: 100% !important;
-  max-width: 100% !important;
-
-  display: inline-block !important;
-  margin: 0 0 22px 0 !important;  /* vertical breathing room */
-  padding: 0 !important;
-  break-inside: avoid;             /* prevents splitting */
-}
 
 /* your actual tile */
 #work .model.img{
@@ -2295,45 +2262,7 @@ html, body {
   background: rgba(0,0,0,0.22);
 }
 
-/* ============================================
-   FEATURED “DIFFERENT SIZE” LOOK (CSS ONLY)
-   (visual featured effect – no HTML changes)
-============================================ */
 
-/* featured #1 = bigger & taller */
-#work .row.no-gutters > [class*="col-"]:nth-child(1) .model.img{
-  min-height: 420px !important;
-}
-
-/* featured #2 = tall */
-#work .row.no-gutters > [class*="col-"]:nth-child(2) .model.img{
-  min-height: 360px !important;
-}
-
-/* featured #5 = wide feeling (bigger) */
-#work .row.no-gutters > [class*="col-"]:nth-child(5){
-  transform: scale(1.03);
-  transform-origin: center;
-}
-
-/* give each 3rd image slightly different height (editorial rhythm) */
-#work .row.no-gutters > [class*="col-"]:nth-child(3n) .model.img{
-  min-height: 330px !important;
-}
-#work .row.no-gutters > [class*="col-"]:nth-child(4n) .model.img{
-  min-height: 390px !important;
-}
-
-/* ============================================
-   KEEP YOUR "VIEW" BUTTON WORKING
-============================================ */
-#work .model .icon.image-popup{
-  z-index: 10 !important;
-}
-#work .model.img::before,
-#work .model.img::after{
-  pointer-events: none !important;
-}
 
 /* ============================================
    RESPONSIVE
@@ -3209,13 +3138,165 @@ html, body {
 
 }
 
+/* ================================
+   MOBILE GALLERY — FIX CROPPING
+================================ */
 @media (max-width: 768px){
-  #work .row.no-gutters > div:nth-child(even) .model.img{
-    height: 290px !important;
-    min-height: 290px !important;
+
+  #work .model.img{
+    height: 280px !important;     /* was 230 */
+    min-height: 280px !important;
+    max-height: 280px !important;
+
+    background-size: cover !important;
+    background-position: center center !important;
   }
 }
 
+/* ================================
+   HERO LOGO — BIG PHONE FIX
+   iPhone 14 Pro Max / big devices
+================================ */
+@media (max-width: 768px) and (min-width: 410px){
+  #home .primary-logo{
+    width: 300px !important;
+    max-width: 92vw !important;
+  }
+}
+
+/* normal phones (iphone 12 etc) */
+@media (max-width: 409px){
+  #home .primary-logo{
+    width: 260px !important;
+    max-width: 86vw !important;
+  }
+}
+
+/* ==========================================================
+   MV GALLERY — CLEAN GRID (NO MASONRY)
+   Put this at the VERY BOTTOM of style-final.css
+   ========================================================== */
+
+/* outer padding */
+#work .container-fluid{
+  padding-left: 24px !important;
+  padding-right: 24px !important;
+}
+
+/* restore bootstrap row behaviour */
+#work .row.no-gutters{
+  margin-left: -12px !important;
+  margin-right: -12px !important;
+  display: flex !important;
+  flex-wrap: wrap !important;
+}
+
+/* spacing between tiles */
+#work .row.no-gutters > [class*="col-"]{
+  padding-left: 12px !important;
+  padding-right: 12px !important;
+  padding-bottom: 24px !important;
+}
+
+/* tile styling */
+#work .model{
+  position: relative !important;
+  overflow: hidden !important;
+  border-radius: 20px !important;
+}
+
+/* image tile */
+#work .model.img{
+  width: 100% !important;
+  height: 380px !important;         /* desktop tile height */
+  min-height: 380px !important;
+  max-height: 380px !important;
+
+  background-size: cover !important;
+  background-position: center center !important;
+  background-repeat: no-repeat !important;
+}
+
+/* kill desc always (you already want hidden) */
+#work .model .desc{
+  display: none !important;
+}
+
+/* VIEW button */
+#work .model .icon.image-popup{
+  opacity: 0 !important;
+  transform: translateY(8px);
+  transition: 0.4s ease;
+  position: absolute !important;
+  bottom: 18px !important;
+  right: 18px !important;
+  z-index: 99 !important;
+}
+
+#work .model:hover .icon.image-popup{
+  opacity: 1 !important;
+  transform: translateY(0px);
+}
+
+/* remove masonry overlay crap */
+#work .model.img::before,
+#work .model.img::after{
+  content: none !important;
+}
+
+/* -----------------------------
+   MOBILE (full width rectangles)
+-------------------------------- */
+@media (max-width: 768px){
+
+  #work .container-fluid{
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+  }
+
+  #work .row.no-gutters{
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+
+  #work .row.no-gutters > [class*="col-"]{
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    padding-bottom: 18px !important;
+  }
+
+  #work .model{
+    border-radius: 16px !important;
+  }
+
+  /* IMPORTANT: mobile rectangle look */
+  #work .model.img{
+    height: 320px !important;
+    min-height: 320px !important;
+    max-height: 320px !important;
+    border-radius: 16px !important;
+    background-position: center 40% !important;
+  }
+
+  /* VIEW always visible on mobile (optional) */
+  #work .model .icon.image-popup{
+    opacity: 1 !important;
+    transform: none !important;
+    bottom: 14px !important;
+    right: 14px !important;
+  }
+}
+
+/* -----------------------------
+   SMALL PHONES (extra safe)
+-------------------------------- */
+@media (max-width: 420px){
+  #work .model.img{
+    height: 280px !important;
+    min-height: 280px !important;
+    max-height: 280px !important;
+  }
+}
 
 
 </style>
