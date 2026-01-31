@@ -358,7 +358,7 @@ else {
 
 <img class="primary-logo"src="./images/Web Use (RGB)/PNG/Primary Logo in White@4x-8.png" alt="">
 		  		
-		  				<p class="mb-4">Capturing unscripted beauty in motion - from Melbourne’s streets to its quiet corners.
+		  				<p class="mb-4"> Cinematic photography - moments, movement, and atmosphere. From Melbourne to wherever the story takes us.
 </p>
 <p class="mt-5">
   <a href="#contact" class="btn-custom">Book a Shoot <span class="ion-ios-arrow-round-forward"></span></a>
@@ -392,13 +392,36 @@ else {
 	    				</div>
     				</div>
     			</div>
+
+
     			<div class="col-md-6 col-lg-6 pl-md-5">
-	          <div class="heading-section ftco-animate mv-reveal">
-	            <h2 class="mb-4">About<br>Mehyar Visuals</h2>
-	            <p>I’m Mehyar - a Melbourne photographer obsessed with real moments.
-I chase light, movement, and the small truths people overlook.
-Nothing staged, nothing forced - just moments as they reveal themselves.
-</p>
+	          <div data-aos="fade-up" data-aos-duration="1100" class="heading-section ftco-animate mv-reveal">
+<h2 class="mv-about-title">
+  <span class="mv-kicker">about</span>
+  <span class="mv-headline">Mehyar Visuals</span>
+</h2>
+
+<div class="mv-about-copy">
+  <p>
+    I’m Mehyar — a Melbourne-based photographer focused on capturing real,
+    cinematic moments. I look for movement, light, and the small details most
+    people miss.
+  </p>
+
+  <p>
+    I shoot locally and while travelling, creating images that feel natural,
+    timeless, and honest — always with intention.
+  </p>
+
+  <p>
+    Whether you need LinkedIn/business portraits, event coverage,
+    modelling/portfolio shots, or a standout Instagram photo — I’ll bring your
+    vision to life with a refined cinematic style.
+  </p>
+</div> </div>
+
+
+
 
 	            <div class="counter-wrap ftco-animate d-flex my-md-4">
 	              <div class="text">
@@ -413,7 +436,7 @@ Nothing staged, nothing forced - just moments as they reveal themselves.
 		            <div class="img img-about-2 ml-2" style="background-image: url(images/IMG_9236.jpg);"></div>
 		          </div>
 		          <blockquote class="blockquote mv-caption-reveal">
-		          	<p>"I don’t take pictures. I reveal moments that were already speaking."</p>
+		          	<p>"Some moments don’t repeat. That’s why I shoot."</p>
 		          	<span>&mdash;- Mehyar Visuals</span>
 		          </blockquote>
 	          </div>
@@ -422,6 +445,8 @@ Nothing staged, nothing forced - just moments as they reveal themselves.
     	</div>
 		
     </section>
+
+    
 
 	<div class="mv-divider"></div>
 
@@ -507,8 +532,7 @@ a{
 				  		<div class="col-md-5 heading-section ftco-animate pb-5">
 		            <h2 class="mb-4">Photography Services</h2>
 <p class="services-text justify-content-center text-center">
-    Every image goes through a thoughtful process — from pre-visualizing the scene to refining the final edit. It’s not just photography; it's storytelling.
-</p>
+A clean, guided shoot - with space to move naturally. Every image is edited with intention, keeping the final look cinematic and timeless.</p>
 
 
 </div>
@@ -3515,7 +3539,7 @@ html, body {
   position: fixed;
   top: 0;
   left: 0;
-  height: 8px;
+  height: 4px;
   width: 0%;
   background: rgba(255,255,255,0.7);
 
@@ -3632,6 +3656,649 @@ html, body {
   height: calc(100% - 8px);
   background: rgba(255,255,255,0.22);
   border-radius: 99px;
+}
+
+
+/* ===============================
+   ABOUT SECTION — PREMIUM EDITORIAL
+================================ */
+#about {
+  position: relative;
+}
+
+#about .heading-section h2 {
+  letter-spacing: 3px !important;
+  text-transform: uppercase !important;
+  font-size: 14px !important;
+  opacity: 0.8 !important;
+  margin-bottom: 22px !important;
+}
+
+/* "MEHYAR VISUALS" title spacing */
+#about .heading-section h2 br {
+  display: none;
+}
+
+#about .heading-section h2::after {
+  content: "";
+  display: block;
+  width: 70px;
+  height: 1px;
+  margin-top: 18px;
+  background: rgba(255,255,255,0.15);
+}
+
+/* About paragraph = luxury text block */
+#about .heading-section p {
+  max-width: 560px !important;
+  font-size: 14px !important;
+  line-height: 2 !important;
+  letter-spacing: 0.15px;
+  color: rgba(255,255,255,0.72) !important;
+  margin-top: 25px !important;
+}
+
+
+
+/* counter line looks more premium */
+#about .counter-wrap span {
+  letter-spacing: 3px !important;
+  font-size: 11px !important;
+  opacity: 0.75 !important;
+}
+
+#about .counter-wrap span.number {
+  font-size: 20px !important;
+  font-weight: 700 !important;
+  letter-spacing: 1px !important;
+  opacity: 1 !important;
+}
+
+/* clean spacing above quote */
+#about blockquote.blockquote {
+  margin-top: 48px !important;
+  padding-left: 0 !important;
+  border: none !important;
+  max-width: 520px;
+}
+
+/* quote typography */
+#about blockquote.blockquote p {
+  font-style: italic;
+  font-size: 16px !important;
+  line-height: 1.7 !important;
+  color: rgba(255,255,255,0.86) !important;
+}
+
+/* signature */
+#about blockquote.blockquote span {
+  display: inline-block;
+  margin-top: 14px;
+  letter-spacing: 2px;
+  font-size: 11px;
+  opacity: 0.55;
+}
+
+/* Logo container polish */
+#about .img-video {
+  filter: drop-shadow(0 16px 45px rgba(0,0,0,0.65));
+}
+
+/* MOBILE: remove left bar and center align */
+@media (max-width: 768px){
+  #about .heading-section {
+    padding-left: 0 !important;
+    text-align: center !important;
+  }
+
+  #about .heading-section::before {
+    display: none !important;
+  }
+
+  #about .heading-section p {
+    margin-left: auto !important;
+    margin-right: auto !important;
+    text-align: center !important;
+  }
+}
+
+#about .heading-section h2 {
+  font-size: 12px !important;
+  letter-spacing: 6px !important;
+  text-transform: uppercase !important;
+  opacity: 0.7 !important;
+  margin-bottom: 28px !important;
+  white-space: nowrap;
+}
+
+#about .heading-section h2 {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+
+#about .heading-section h2 br {
+  display: none !important;
+}
+
+#about .heading-section h2 {
+  font-size: 12px !important;
+  letter-spacing: 6px !important;
+  text-transform: uppercase !important;
+  opacity: 0.7 !important;
+  margin-bottom: 28px !important;
+  white-space: nowrap;
+}
+
+#about .heading-section h2 {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+
+#about .heading-section h2 br {
+  display: none !important;
+}
+
+#about .heading-section p {
+  font-size: 14px !important;
+  line-height: 2.1 !important;
+  color: rgba(255,255,255,0.72) !important;
+
+  /* makes it feel like pro sites */
+  text-wrap: pretty;
+  font-feature-settings: "liga" 1, "kern" 1;
+}
+
+
+#about blockquote.blockquote {
+  margin-top: 50px !important;
+  padding: 26px 0 0 28px !important;
+  border-left: 1px solid rgba(255,255,255,0.18) !important;
+  position: relative;
+}
+
+#about blockquote.blockquote p {
+  font-size: 16px !important;
+  line-height: 1.8 !important;
+  font-style: italic;
+  color: rgba(255,255,255,0.86) !important;
+}
+
+#about blockquote.blockquote span {
+  display: block;
+  margin-top: 18px;
+  font-size: 11px !important;
+  letter-spacing: 3px;
+  opacity: 0.45;
+  text-transform: uppercase;
+}
+
+#about .heading-section h2::after {
+  content: "";
+  display: block;
+  height: 1px;
+  width: 0px;
+  margin-top: 18px;
+  background: rgba(255,255,255,0.2);
+  animation: aboutLine 1.4s ease forwards;
+}
+
+@keyframes aboutLine {
+  to { width: 80px; }
+}
+
+/* ===========================
+   ABOUT LAYOUT — CLEAN ALIGNMENT
+   =========================== */
+
+#about .row.d-flex.no-gutters{
+  align-items: center !important;
+}
+
+#about .img-video{
+  height: 320px !important;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#about .heading-section{
+  padding-left: 0 !important;   /* kill your weird padding */
+  margin-left: 0 !important;
+}
+
+@media (max-width: 768px){
+  #about .row.d-flex.no-gutters{
+    text-align: center !important;
+  }
+}
+
+/* remove template-ish editorial lines */
+#about .heading-section::before,
+#about blockquote.blockquote::before,
+#about .heading-section h2::after{
+  display: none !important;
+}
+
+/* ===========================
+   QUOTE — MINIMAL + PREMIUM
+   =========================== */
+#about blockquote.blockquote{
+  margin-top: 34px !important;
+  padding: 0 !important;
+  border: none !important;
+}
+
+#about blockquote.blockquote p{
+  font-size: 16px !important;
+  line-height: 1.7 !important;
+  font-style: italic;
+  opacity: 0.88;
+  margin-bottom: 12px !important;
+}
+
+#about blockquote.blockquote span{
+  font-size: 11px !important;
+  letter-spacing: 3px;
+  opacity: 0.5;
+  text-transform: uppercase;
+}
+
+
+#about.ftco-section{
+  padding-top: 95px !important;
+  padding-bottom: 95px !important;
+}
+
+/* ===========================
+   ABOUT SECTION — FINAL POLISH
+   =========================== */
+
+.mv-about-title{
+  font-size: 12px !important;
+  letter-spacing: 6px !important;
+  text-transform: uppercase;
+  opacity: 0.75;
+  margin-bottom: 26px !important;
+}
+
+.mv-about-title span{
+  display: block;
+  margin-top: 10px;
+  opacity: 0.70;
+}
+
+/* About text block */
+.mv-about-text p{
+  max-width: 560px;
+  font-size: 14px !important;
+  line-height: 2.05 !important;
+  color: rgba(255,255,255,0.72) !important;
+  margin-bottom: 18px !important;
+}
+
+/* Counter cleaner */
+#about .counter-wrap{
+  margin-top: 22px !important;
+  margin-bottom: 18px !important;
+}
+
+#about .counter-wrap .number{
+  font-size: 22px !important;
+  font-weight: 700 !important;
+}
+
+/* Quote = luxury caption */
+#about blockquote.blockquote{
+  margin-top: 26px !important;
+  padding: 0 !important;
+  border: none !important;
+}
+
+#about blockquote.blockquote p{
+  font-size: 16px !important;
+  font-style: italic;
+  line-height: 1.7 !important;
+  color: rgba(255,255,255,0.85) !important;
+}
+
+#about blockquote.blockquote span{
+  display: block;
+  margin-top: 12px;
+  font-size: 11px !important;
+  letter-spacing: 3px;
+  opacity: 0.45;
+  text-transform: uppercase;
+}
+
+/* ABOUT title — force override template styles */
+.mv-about-title { 
+  margin-bottom: 26px !important;
+  line-height: 1.2 !important;
+}
+
+.mv-about-title .mv-kicker{
+  display:block !important;
+  font-size:11px !important;
+  letter-spacing:6px !important;
+  text-transform:uppercase !important;
+  opacity:0.55 !important;
+  margin-bottom:10px !important;
+}
+
+.mv-about-title .mv-headline{
+  display:inline-block !important;
+  font-size:22px !important;
+  letter-spacing:1px !important;
+  font-weight:600 !important;
+  opacity:0.92 !important;
+  position:relative !important;
+  padding-bottom:12px !important;
+}
+
+/* underline */
+.mv-about-title .mv-headline::after{
+  content:"" !important;
+  position:absolute !important;
+  left:0 !important;
+  bottom:0 !important;
+  width:72px !important;
+  height:1px !important;
+  background:rgba(255,255,255,0.18) !important;
+}
+
+
+/* ==========================================================
+   MV ABOUT — FINAL (SINGLE SOURCE OF TRUTH)
+   Put this at VERY BOTTOM of style-final.css
+   ========================================================== */
+
+#about .heading-section{
+  position: relative !important;
+  max-width: 620px !important;
+  padding-left: 26px !important;
+}
+
+/* LEFT ACCENT LINE (VISIBLE) */
+#about .heading-section::before{
+  content:"" !important;
+  position:absolute !important;
+  left: 0 !important;
+  top: 6px !important;
+  bottom: 6px !important;
+  width: 2px !important;
+
+  /* stronger visibility */
+  background: rgba(255,255,255,0.14) !important;
+  border-radius: 99px !important;
+  display: block !important;
+  opacity: 1 !important;
+}
+
+/* ABOUT TITLE */
+.mv-about-title{
+  margin: 0 0 26px 0 !important;
+  line-height: 1.1 !important;
+}
+
+.mv-about-title .mv-kicker{
+  display:block !important;
+  font-size: 11px !important;
+  letter-spacing: 6px !important;
+  text-transform: uppercase !important;
+  color:#E2E2E2 !important;
+  margin-bottom: 12px !important;
+}
+
+.mv-about-title .mv-headline{
+  display:inline-block !important;
+  font-size: 24px !important;
+  font-weight: 600 !important;
+  letter-spacing: 1px !important;
+  color:  white !important;
+
+  padding-bottom: 12px !important;
+  position: relative !important;
+}
+
+/* underline */
+
+/* ABOUT COPY */
+.mv-about-copy{
+  margin-top: 0 !important;
+}
+
+.mv-about-copy p{
+  margin: 0 0 18px 0 !important;
+  font-size: 16px !important;
+  line-height: 1.5 !important;
+  letter-spacing: 0.2px !important;
+
+  /* whiter for dark bg */
+  color: white !important;
+}
+
+/* optional: first paragraph slightly brighter */
+.mv-about-copy p:first-child{
+  color: white !important;
+}
+
+/* COUNTER */
+#about .counter-wrap{
+  margin-top: 26px !important;
+}
+
+#about .counter-wrap span{
+  font-size: 11px !important;
+  letter-spacing: 4px !important;
+  opacity: 0.7 !important;
+}
+
+#about .counter-wrap .number{
+  font-size: 22px !important;
+  font-weight: 700 !important;
+  opacity: 1 !important;
+}
+
+/* QUOTE */
+#about blockquote.blockquote{
+  margin-top: 28px !important;
+  padding: 0 !important;
+  border: none !important;
+}
+
+#about blockquote.blockquote p{
+  font-size: 17px !important;
+  line-height: 1.8 !important;
+  font-style: italic !important;
+  color: #E2E2E2 !important;
+}
+
+#about blockquote.blockquote span{
+  display:block !important;
+  margin-top: 12px !important;
+  font-size: 11px !important;
+  letter-spacing: 3px !important;
+  text-transform: uppercase !important;
+  opacity: 0.45 !important;
+}
+
+/* MOBILE: remove left line + center */
+@media (max-width: 768px){
+  #about .heading-section{
+    padding-left: 0 !important;
+    text-align: center !important;
+  }
+  #about .heading-section::before{
+    display: none !important;
+  }
+  .mv-about-title .mv-headline::after{
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+  }
+  .mv-about-copy p{
+    font-size: 15px !important;
+  }
+}
+.mv-about-title .mv-headline{
+  color: rgba(255,255,255,0.98) !important;
+}
+.mv-about-title .mv-headline{
+  color: #fff !important;
+  opacity: 1 !important;
+  font-weight: 650 !important;
+}
+
+/* =========================================
+   MV ABOUT — FINAL (SINGLE SOURCE OF TRUTH)
+   Put this at BOTTOM of CSS
+========================================= */
+
+#about .heading-section{
+  max-width: 560px !important;
+  padding-left: 0 !important;
+  margin-left: 0 !important;
+}
+
+/* kill all template paragraph spacing */
+#about .heading-section p{
+  margin: 0 !important;
+}
+
+/* title block */
+.mv-about-title{
+  margin: 0 0 26px 0 !important;
+  line-height: 1.1 !important;
+}
+
+.mv-about-title .mv-kicker{
+  display: block !important;
+  font-size: 11px !important;
+  letter-spacing: 7px !important;
+  text-transform: uppercase !important;
+  color: rgba(255,255,255,0.45) !important;
+  margin-bottom: 10px !important;
+}
+
+.mv-about-title .mv-headline{
+  display: inline-block !important;
+  font-size: 22px !important;
+  font-weight: 600 !important;
+  letter-spacing: 1px !important;
+  color: rgba(255,255,255,0.98) !important;  /* <-- makes it WHITE */
+  padding-bottom: 12px !important;
+  position: relative !important;
+}
+
+/* underline */
+.mv-about-title .mv-headline::after{
+  content:"" !important;
+  position:absolute !important;
+  left:0 !important;
+  bottom:0 !important;
+  width:72px !important;
+  height:1px !important;
+  background: rgba(255,255,255,0.16) !important;
+}
+
+/* about copy */
+.mv-about-copy{
+  margin-top: 0 !important;
+}
+
+.mv-about-copy p{
+  font-size: 16px !important;
+  line-height: 2.05 !important;
+  letter-spacing: 0.15px !important;
+  color: rgba(255,255,255,0.72) !important;
+  margin: 0 0 14px 0 !important;
+}
+
+.mv-about-copy p:first-child{
+  color: rgba(255,255,255,0.86) !important;
+  font-weight: 500 !important;
+}
+
+/* spacing rhythm */
+.mv-about-copy p:nth-child(2){
+  margin-top: 14px !important;
+}
+
+.mv-about-copy p:nth-child(3){
+  margin-top: 18px !important;
+}
+
+/* left line — make it visible (yours is too faint) */
+#about .heading-section{
+  position: relative !important;
+  padding-left: 22px !important;
+}
+
+#about .heading-section::before{
+  content:"" !important;
+  position: absolute !important;
+  left: 0 !important;
+  top: 8px !important;
+  bottom: 8px !important;
+  width: 1px !important;
+  background: rgba(255,255,255,0.14) !important; /* stronger */
+}
+
+/* ===============================
+   MV ABOUT — LUX UPGRADE
+================================ */
+
+/* first paragraph = hero line */
+.mv-about-copy p:first-child{
+  font-size: 18px !important;
+  line-height: 1.9 !important;
+  color: rgba(255,255,255,0.92) !important;
+}
+
+/* body copy */
+.mv-about-copy p{
+  font-size: 15.5px !important;
+  line-height: 2.05 !important;
+}
+
+/* stronger spacing blocks */
+.mv-about-copy p:nth-child(2){
+  margin-top: 18px !important;
+}
+
+.mv-about-copy p:nth-child(3){
+  margin-top: 22px !important;
+  padding-top: 18px !important;
+  border-top: 1px solid rgba(255,255,255,0.08);
+}
+
+.mv-services-line{
+  font-size: 12px !important;
+  letter-spacing: 3px !important;
+  text-transform: uppercase !important;
+  color: rgba(255,255,255,0.65) !important;
+  margin-bottom: 0 !important;
+}
+
+.mv-about-title .mv-headline{
+  color: rgba(255,255,255,0.98) !important;
+}
+.mv-about-title .mv-kicker{
+  color: rgba(255,255,255,0.45) !important;
+}
+
+
+#about .heading-section::before{
+  background: linear-gradient(
+    to bottom,
+    rgba(255,255,255,0),
+    rgba(255,255,255,0.18),
+    rgba(255,255,255,0)
+  ) !important;
+  width: 1px !important;
 }
 
 
