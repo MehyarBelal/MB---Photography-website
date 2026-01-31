@@ -2566,4 +2566,656 @@ html, body {
 }
 
 
+
+/* ============================================
+   MV — REMOVE BLUE FROM ENTIRE WEBSITE
+   ============================================ */
+
+/* remove ALL blue gradients + blue highlights */
+:root{
+  --mv-accent: #E2E2E2;
+  --mv-accent-dark: rgba(226,226,226,0.75);
+}
+
+/* Contact icons (remove gradient blue icons) */
+.contact-section .icon span{
+  background: none !important;
+  -webkit-background-clip: initial !important;
+  -webkit-text-fill-color: initial !important;
+  color: var(--mv-accent) !important;
+  text-shadow: none !important;
+}
+
+/* Contact cards gradient border -> neutral */
+.contact-section .box::before{
+  background: rgba(226,226,226,0.22) !important;
+}
+
+/* Navbar active dot (remove blue) */
+.navbar .nav-menu li .dot.active::before,
+.navbar .nav-menu li:hover .dot::before{
+  background: var(--mv-accent) !important;
+  border-color: var(--mv-accent) !important;
+}
+
+/* Submit button - remove gradient fill */
+.form-group input[type="submit"]{
+  background: transparent !important;
+  border: 2px solid var(--mv-accent) !important;
+  color: #fff !important;
+}
+
+/* Submit hover */
+.form-group input[type="submit"]:hover{
+  background: var(--mv-accent) !important;
+  color: #000 !important;
+}
+
+/* remove section title underline gradient */
+.section-title::after{
+  background: rgba(226,226,226,0.55) !important;
+}
+
+
+/* ==========================================================
+   MV — MOBILE FIX (FINAL, CLEAN, PREMIUM)
+   Put this at the BOTTOM of CSS
+   ========================================================== */
+
+@media (max-width: 768px){
+
+  html, body{ overflow-x: hidden !important; }
+
+  /* -------------------------
+     GLOBAL TYPO + WIDTH
+  ------------------------- */
+  body{
+    font-size: 14px !important;
+  }
+
+  .container{
+    padding-left: 18px !important;
+    padding-right: 18px !important;
+  }
+
+  /* -------------------------
+     HERO
+  ------------------------- */
+  #home.hero-wrap{
+    min-height: 72vh !important; /* was too tall */
+    padding: 70px 0 40px 0 !important;
+    background-position: 52% 38% !important;
+  }
+
+  .primary-logo{
+    width: 230px !important;
+    max-width: 86vw !important;
+    margin-bottom: 16px !important;
+  }
+
+  #home p.mb-4{
+    max-width: 320px;
+    margin: 0 auto !important;
+    font-size: 13px !important;
+    line-height: 1.7 !important;
+    opacity: 0.9;
+  }
+
+  #home .btn-custom{
+    padding: 12px 26px !important;
+    font-size: 12px !important;
+    letter-spacing: 2px !important;
+  }
+
+  /* -------------------------
+     SECTIONS SPACING
+  ------------------------- */
+  #about, #services, #work, #contact{
+    padding-top: 70px !important;
+    padding-bottom: 70px !important;
+  }
+
+  .mv-divider{
+    width: 60% !important;
+    margin: 45px auto 0 auto !important;
+  }
+
+  /* -------------------------
+     ABOUT (make it full width & premium)
+  ------------------------- */
+  #about .row.d-flex.no-gutters{
+    gap: 26px !important;
+  }
+
+  #about .img-video{
+    height: 200px !important;
+    margin-bottom: 0 !important;
+  }
+
+  #about .heading-section{
+    text-align: center !important;
+  }
+
+  #about h2{
+    font-size: 22px !important;
+    line-height: 1.15 !important;
+    margin-bottom: 18px !important;
+  }
+
+  #about p{
+    font-size: 14px !important;
+    line-height: 1.85 !important;
+    opacity: 0.9;
+  }
+
+  #about blockquote.blockquote{
+    margin-top: 26px !important;
+    font-size: 13px !important;
+    opacity: 0.95;
+  }
+
+  /* -------------------------
+     SERVICES (clean 1 column)
+  ------------------------- */
+  #services .row.mobile-center{
+    text-align: center !important;
+  }
+
+  #services .services{
+    padding: 10px 0 !important;
+  }
+
+  #services .services .icon span{
+    font-size: 52px !important;
+  }
+
+  #services .services .heading{
+    font-size: 12px !important;
+    letter-spacing: 2px !important;
+    margin-top: 10px !important;
+  }
+
+  /* -------------------------
+     GALLERY (force a perfect mobile grid)
+  ------------------------- */
+  #work .container-fluid{
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+  }
+
+  /* kill masonry columns */
+  #work .row.no-gutters{
+    column-count: 1 !important;
+    column-gap: 0 !important;
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: 14px !important;
+  }
+
+  #work .row.no-gutters > [class*="col-"]{
+    display: block !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    break-inside: avoid !important;
+  }
+
+  #work .model{
+    border-radius: 18px !important;
+    overflow: hidden !important;
+  }
+
+  /* IMPORTANT: remove any aspect-ratio conflicts */
+  #work .model.img{
+    height: 260px !important;         /* FIXED visual height = clean */
+    min-height: 260px !important;
+    max-height: 260px !important;
+
+    border-radius: 18px !important;
+
+    background-size: cover !important;
+    background-position: center center !important;
+  }
+
+  /* Make VIEW always visible + premium */
+  #work .model .icon.image-popup{
+    opacity: 1 !important;
+    transform: none !important;
+    bottom: 14px !important;
+    right: 14px !important;
+    padding: 8px 14px !important;
+    border-radius: 999px !important;
+    backdrop-filter: blur(6px);
+    background: rgba(0,0,0,0.35) !important;
+  }
+
+  /* -------------------------
+     CONTACT (MAKE IT 1 COLUMN - premium)
+  ------------------------- */
+  .contact-section .row.mb-5{
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: 12px !important;
+    justify-content: center !important;
+  }
+
+  .contact-section .box{
+    padding: 18px !important;
+    border-radius: 16px !important;
+    min-height: unset !important;
+  }
+
+  .contact-section .icon span{
+    font-size: 34px !important;
+    color: #E2E2E2 !important;
+  }
+
+  /* -------------------------
+     FORM
+  ------------------------- */
+  .contact-form{
+    padding: 18px !important;
+    border-radius: 16px !important;
+  }
+
+  .contact-form .form-control{
+    font-size: 14px !important;
+    padding: 12px 14px !important;
+    border-radius: 10px !important;
+  }
+
+  .contact-form textarea{
+    height: 140px !important;
+    resize: none !important;
+  }
+
+  .contact-submit-btn{
+    width: 100% !important;
+    max-width: 280px !important;
+    margin: 10px auto 0 auto !important;
+    display: block !important;
+  }
+}
+
+
+@media (max-width: 768px){
+  #about .counter-wrap{
+    justify-content: center !important;
+    text-align: center !important;
+  }
+
+  #about .counter-wrap .text{
+    width: 100% !important;
+    text-align: center !important;
+  }
+
+  #about .counter-wrap span.number{
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  #about .counter-wrap p.mb-4{
+    text-align: center !important;
+  }
+}
+
+
+@media (max-width: 768px){
+
+  /* =============================
+     CONTACT — REMOVE BLUE / FIX ICONS
+     ============================= */
+
+  /* kill your gradient border */
+  .contact-section .box::before{
+    background: rgba(255,255,255,0.08) !important;
+    -webkit-mask: none !important;
+    mask: none !important;
+    padding: 0 !important;
+  }
+
+  .contact-section .box{
+    border: 1px solid rgba(255,255,255,0.09) !important;
+    background: rgba(10,10,10,0.55) !important;
+    box-shadow: none !important;
+  }
+
+  /* icon = clean white, no gradient */
+  .contact-section .icon span{
+    background: none !important;
+    -webkit-text-fill-color: rgba(255,255,255,0.80) !important;
+    color: rgba(255,255,255,0.80) !important;
+    box-shadow: none !important;
+    font-size: 30px !important;
+  }
+
+  .contact-section h3{
+    color: rgba(255,255,255,0.90) !important;
+  }
+
+  .contact-section p,
+  .contact-section a{
+    color: rgba(255,255,255,0.60) !important;
+  }
+}
+
+
+@media (max-width: 768px){
+
+  /* =============================
+     GALLERY — PREMIUM MOBILE FIX
+     ============================= */
+
+  /* make gallery FULL width */
+  #work .container-fluid{
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+
+  /* force 1-column, proper spacing */
+  #work .row.no-gutters{
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: 18px !important;
+    padding: 0 16px !important;
+    column-count: unset !important;
+  }
+
+  /* each tile */
+  #work .model.img{
+    height: 330px !important;        /* BIGGER = premium */
+    min-height: 330px !important;
+    border-radius: 22px !important;
+    overflow: hidden !important;
+    background-size: cover !important;
+    background-position: center center !important;
+  }
+
+  /* remove the dark overlay that ruins the photos */
+  #work .model.img::before{
+    background: rgba(0,0,0,0.10) !important;
+  }
+
+  /* make VIEW look minimal not ugly */
+  #work .model .icon.image-popup{
+    opacity: 1 !important;
+    transform: none !important;
+    border: 1px solid rgba(255,255,255,0.55) !important;
+    background: rgba(0,0,0,0.22) !important;
+    backdrop-filter: blur(8px);
+    padding: 8px 14px !important;
+    letter-spacing: 2.5px !important;
+    bottom: 16px !important;
+    right: 16px !important;
+  }
+
+  #work .model .icon.image-popup::after{
+    content: "VIEW" !important;
+    font-size: 10px !important;
+    letter-spacing: 3px !important;
+    opacity: 0.95;
+  }
+}
+
+/* ==========================================================
+   MV — FINAL MOBILE FIX (SINGLE SOURCE OF TRUTH)
+   PUT THIS AT VERY BOTTOM OF CSS FILE
+   ========================================================== */
+
+@media (max-width: 768px) {
+
+  html, body {
+    overflow-x: hidden !important;
+  }
+
+  /* -------------------------
+     ABOUT COUNTER CENTER
+  ------------------------- */
+  #about .counter-wrap,
+  #about .counter-wrap .text,
+  #about .counter-wrap p {
+    width: 100% !important;
+    justify-content: center !important;
+    text-align: center !important;
+  }
+
+  #about .counter-wrap span.number {
+    display: inline-block !important;
+    margin: 0 auto !important;
+    text-align: center !important;
+  }
+
+  /* -------------------------
+     GALLERY (FORCE CLEAN 1 COLUMN)
+  ------------------------- */
+
+  /* kill container padding weirdness */
+  #work .container-fluid {
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+  }
+
+  /* KILL masonry/columns/grid conflict */
+  #work .row.no-gutters {
+    display: block !important;
+    column-count: unset !important;
+    column-gap: unset !important;
+    margin: 0 !important;
+  }
+
+  /* each item becomes full width */
+  #work .row.no-gutters > [class*="col-"] {
+    width: 100% !important;
+    max-width: 100% !important;
+    flex: 0 0 100% !important;
+
+    padding: 0 !important;
+    margin: 0 0 16px 0 !important;
+    display: block !important;
+    break-inside: avoid !important;
+  }
+
+  /* tile */
+  #work .model {
+    border-radius: 18px !important;
+    overflow: hidden !important;
+    position: relative !important;
+  }
+
+  /* THE MOST IMPORTANT RULE: pick ONE height */
+  #work .model.img {
+    height: 320px !important;
+    min-height: 320px !important;
+    max-height: 320px !important;
+
+    width: 100% !important;
+    padding: 0 !important;
+    background-size: cover !important;
+    background-position: center center !important;
+    background-repeat: no-repeat !important;
+    border-radius: 18px !important;
+  }
+
+  /* remove weird overlays */
+  #work .model.img::before,
+  #work .model.img::after {
+    display: none !important;
+  }
+
+  /* keep the "VIEW" button clean and visible */
+  #work .model .icon.image-popup {
+    opacity: 1 !important;
+    transform: none !important;
+    position: absolute !important;
+
+    bottom: 14px !important;
+    right: 14px !important;
+
+    padding: 8px 14px !important;
+    border-radius: 999px !important;
+
+    border: 1px solid rgba(255,255,255,0.55) !important;
+    background: rgba(0,0,0,0.25) !important;
+    backdrop-filter: blur(8px);
+  }
+
+  #work .model .icon.image-popup span {
+    display: none !important;
+  }
+
+  #work .model .icon.image-popup::after {
+    content: "VIEW" !important;
+    font-size: 10px !important;
+    letter-spacing: 3px !important;
+    color: rgba(255,255,255,0.9) !important;
+  }
+
+  /* -------------------------
+     CONTACT ICONS + BOXES FIX
+  ------------------------- */
+
+  /* force contact layout clean */
+  .contact-section .row.mb-5 {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: 14px !important;
+  }
+
+  /* remove gradient border completely */
+  .contact-section .box::before {
+    display: none !important;
+  }
+
+  .contact-section .box {
+    border: 1px solid rgba(255,255,255,0.10) !important;
+    border-radius: 16px !important;
+    background: rgba(10,10,10,0.55) !important;
+    box-shadow: none !important;
+    padding: 20px !important;
+  }
+
+  .contact-section .icon span {
+    background: none !important;
+    -webkit-text-fill-color: rgba(255,255,255,0.85) !important;
+    color: rgba(255,255,255,0.85) !important;
+    font-size: 30px !important;
+    box-shadow: none !important;
+  }
+}
+
+
+@media (max-width: 768px){
+
+  /* ============================
+     CONTACT SECTION (FIX ICONS)
+     ============================ */
+
+  /* force clean 2x2 grid */
+  .contact-section .row.mb-5{
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    gap: 14px !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+
+  /* force each bootstrap column behave like grid item */
+  .contact-section .row.mb-5 > .col-md-3{
+    max-width: 100% !important;
+    width: 100% !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+
+  .contact-section .box{
+    padding: 18px 14px !important;
+    border-radius: 16px !important;
+    background: rgba(18,18,18,0.75) !important;
+    border: 1px solid rgba(255,255,255,0.09) !important;
+    box-shadow: none !important;
+    min-height: 150px !important;
+
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    text-align: center !important;
+  }
+
+  /* FIX: icon size + alignment */
+  .contact-section .icon{
+    margin-bottom: 10px !important;
+  }
+
+  .contact-section .icon span{
+    font-size: 28px !important;
+    color: rgba(255,255,255,0.88) !important;
+    background: none !important;
+    -webkit-text-fill-color: rgba(255,255,255,0.88) !important;
+    box-shadow: none !important;
+  }
+
+  .contact-section h3{
+    font-size: 12px !important;
+    letter-spacing: 2px !important;
+    margin-bottom: 6px !important;
+  }
+
+  .contact-section p,
+  .contact-section a{
+    font-size: 12px !important;
+    line-height: 1.45 !important;
+    color: rgba(255,255,255,0.62) !important;
+    margin-bottom: 0 !important;
+  }
+
+  /* if screen is very small -> go 1 column */
+  @media (max-width: 420px){
+    .contact-section .row.mb-5{
+      grid-template-columns: 1fr !important;
+    }
+  }
+
+
+  /* ============================
+     GALLERY (FIX “VIEW” EVERYWHERE)
+     ============================ */
+
+  /* hide VIEW completely on mobile */
+  #work .model .icon.image-popup{
+    opacity: 0 !important;
+    visibility: hidden !important;
+  }
+
+  /* optional: show when user taps/holds (active) */
+  #work .model:active .icon.image-popup{
+    opacity: 1 !important;
+    visibility: visible !important;
+  }
+
+  /* ============================
+     GALLERY IMAGE SHAPE
+     ============================ */
+
+  /* stop the thin “pill” look */
+  #work .model.img{
+    height: 360px !important;          /* makes it cinematic */
+    min-height: 360px !important;
+    border-radius: 18px !important;    /* less bubble */
+    background-size: cover !important;
+    background-position: center 40% !important;
+  }
+
+}
+
+@media (max-width: 768px){
+  #work .row.no-gutters > div:nth-child(even) .model.img{
+    height: 290px !important;
+    min-height: 290px !important;
+  }
+}
+
+
+
 </style>
