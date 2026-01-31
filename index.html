@@ -1364,6 +1364,112 @@ display: none !important;
 </script>
 
 
+<script>
+/* WOW REVEAL: scroll animations */
+document.addEventListener("DOMContentLoaded", () => {
+  const items = document.querySelectorAll("section, .ftco-animate, .model, .box, .contact-form");
+
+  items.forEach(el => el.classList.add("wow-reveal"));
+
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if(entry.isIntersecting){
+        entry.target.classList.add("is-visible");
+        io.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.15 });
+
+  document.querySelectorAll(".wow-reveal").forEach(el => io.observe(el));
+});
+</script>
+
+<script>
+/* HERO PARALLAX */
+window.addEventListener("scroll", () => {
+  const hero = document.querySelector("#home.hero-wrap");
+  if(!hero) return;
+
+  const y = window.scrollY;
+  hero.style.backgroundPosition = `60% ${50 + y * 0.03}%`;
+});
+</script>
+<script>
+/* GALLERY TILT */
+document.addEventListener("DOMContentLoaded", () => {
+  const cards = document.querySelectorAll("#work .model");
+
+  cards.forEach(card => {
+    card.addEventListener("mousemove", (e) => {
+      const rect = card.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+
+      const midX = rect.width / 2;
+      const midY = rect.height / 2;
+
+      const rotateY = ((x - midX) / midX) * 6;
+      const rotateX = -((y - midY) / midY) * 6;
+
+      card.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+    });
+
+    card.addEventListener("mouseleave", () => {
+      card.style.transform = "rotateX(0deg) rotateY(0deg)";
+    });
+  });
+
+  /* disable tilt on mobile */
+  if(window.innerWidth < 768){
+    cards.forEach(c => c.style.transform = "none");
+  }
+});
+</script>
+
+<script>
+/* PROGRESS BAR */
+document.addEventListener("DOMContentLoaded", () => {
+  const bar = document.createElement("div");
+  bar.className = "mv-progress";
+  document.body.appendChild(bar);
+
+  window.addEventListener("scroll", () => {
+    const scrollTop = window.scrollY;
+    const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+    const percent = (scrollTop / docHeight) * 100;
+    bar.style.width = percent + "%";
+  });
+});
+</script>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const btn = document.querySelector('#home a.btn-custom');
+  if (!btn) return;
+
+  btn.style.willChange = "transform";
+
+  btn.addEventListener("mousemove", (e) => {
+    const rect = btn.getBoundingClientRect();
+    const x = e.clientX - rect.left - rect.width / 2;
+    const y = e.clientY - rect.top - rect.height / 2;
+
+    btn.style.transform = `translate(${x * 0.18}px, ${y * 0.18}px) scale(1.02)`;
+  });
+
+  btn.addEventListener("mouseleave", () => {
+    btn.style.transform = "translate(0px, 0px) scale(1)";
+  });
+
+  // disable on mobile
+  if (window.innerWidth < 768) {
+    btn.style.transform = "none";
+    btn.onmousemove = null;
+  }
+});
+</script>
+
+
   </body>
 </html>
 
@@ -3326,5 +3432,87 @@ html, body {
   line-height: 1 !important;
 }
 
-  
+
+/* ===========================
+   WOW EFFECT 01: Film Grain
+   =========================== */
+/* ===========================
+   WOW EFFECT 05: Gallery Depth
+   =========================== */
+#work .model{
+  transform-style: preserve-3d;
+  perspective: 900px;
+}
+
+#work .model.img{
+  position: relative;
+  overflow: hidden !important;
+}
+
+#work .model.img::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background: radial-gradient(circle at 50% 20%,
+      rgba(255,255,255,0.10),
+      rgba(0,0,0,0.55)
+  );
+  opacity: 0;
+  transition: 0.7s ease;
+  pointer-events:none;
+}
+
+#work .model:hover .img::before{
+  opacity: 1;
+}
+
+
+  /* ===========================
+   WOW EFFECT 06: Progress Line
+   =========================== */
+.mv-progress{
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 8px;
+  width: 0%;
+  background: rgba(255,255,255,0.7);
+
+  z-index: 99999;
+  transition: width 0.05s linear;
+}
+
+/* Magnetic effect target */
+.btn-custom{
+  transition: transform 0.25s ease;
+}
+
+
+
+
+.mv-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 8px;                 /* thicker */
+  width: 0%;
+  z-index: 999999;
+
+  background: linear-gradient(
+    90deg,
+    rgba(255,255,255,0.3),
+    rgba(255,255,255,0.95),
+    rgba(255,255,255,0.3)
+  );
+
+  box-shadow: 0 0 18px rgba(255,255,255,0.45);
+  border-radius: 999px;
+}
+
+#home .btn-custom {
+  display: inline-block;
+  transition: transform 0.2s ease !important;
+}
+
+
 </style>
