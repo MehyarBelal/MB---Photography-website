@@ -4301,5 +4301,33 @@ html, body {
   width: 1px !important;
 }
 
+.hero-wrap {
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-wrap .container,
+.hero-wrap .slider-text {
+  position: relative;
+  z-index: 2;
+}
+
+.hero-wrap::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: -80px; /* extends below hero */
+  background: linear-gradient(
+    to bottom,
+    rgba(0,0,0,0.15) 0%,
+    rgba(0,0,0,0.35) 55%,
+    rgba(0,0,0,0.95) 95%,
+    rgba(0,0,0,1) 100%
+  );
+  z-index: 1;
+}
+
 
 </style>
