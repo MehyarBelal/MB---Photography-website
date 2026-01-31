@@ -2210,5 +2210,75 @@ html, body {
 }
 
 
+#work .row.no-gutters > [class*="col-"] {
+  padding: 14px !important;
+}
+
+#work .model.img {
+  border-radius: 10px !important;
+  overflow: hidden !important;
+  transform: translateZ(0); /* smoother hover */
+}
+
+#work .model.img:hover {
+  transform: scale(1.015);
+}
+
+
+@media (max-width: 768px) {
+  #work .row.no-gutters > [class*="col-"] {
+    padding-left: 14px !important;
+    padding-right: 14px !important;
+    padding-bottom: 16px !important;
+  }
+
+
+}
+
+
+/* ============================================
+   MV — CSS ONLY EDITORIAL GALLERY (NO HTML CHANGES)
+   Works with your current: .row.no-gutters + .col-md-4
+============================================ */
+
+/* add breathing room + padding around full gallery area */
+#work .container-fluid{
+  padding-left: 24px !important;
+  padding-right: 24px !important;
+}
+
+/* remove bootstrap no-gutters crushing */
+#work .row.no-gutters{
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+
+  /* IMPORTANT: switch from rigid row to masonry columns */
+  display: block !important;
+  column-count: 3;
+  column-gap: 22px;       /* breathing room */
+}
+
+/* each bootstrap col becomes a masonry item */
+#work .row.no-gutters > [class*="col-"]{
+  float: none !important;
+  width: 100% !important;
+  max-width: 100% !important;
+
+  display: inline-block !important;
+  margin: 0 0 22px 0 !important;  /* vertical breathing room */
+  padding: 0 !important;
+  break-inside: avoid;             /* prevents splitting */
+}
+
+/* your actual tile */
+#work .model.img{
+  width: 100% !important;
+
+  /* dynamic height (masonry feel) */
+  min-height: 280px !important;
+  height: auto !important;
+
+  border-radius: 18px
+
 
 </style>
