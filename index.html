@@ -422,7 +422,8 @@ Nothing staged, nothing forced - just moments as they reveal themselves.
 		
     </section>
 
-	
+	<div class="mv-divider"></div>
+
 
 	<style>
 	
@@ -537,6 +538,8 @@ a{
 		              <div class="icon"><span class="flaticon-video-player-1"></span></div>
 		              <div class="media-body">
 		                <h3 class="heading mb-3">Personal Branding</h3>
+
+                    
 		       
 		              </div>
 		            </div> 
@@ -545,7 +548,7 @@ a{
 	        </div>
 
         </div>
-        <div class="row progress-circle pt-md-5">
+        <div class="row progress-circle pt-md-5" style="display:none">
         	<div class="col-md-7 order-md-last py-md-5">
         		<div class="row justify-content-center text-center" >
 				  		<div class="col-md-4 mb-md-0 mb-4 ftco-animate">
@@ -654,6 +657,7 @@ a{
 		  </div>
 		</section>  
 		<!-- End Services Section -->
+<div class="mv-divider"></div>
 
 		<!-- Start Testimonials Section -->
 		<section id="work" class="ftco-section">
@@ -1757,6 +1761,100 @@ border: 2px solid #E2E2E2 !important;
   #about {
     padding-top: 70px !important;
     padding-bottom: 70px !important;
+  }
+}
+
+
+.mv-divider {
+  display: block;
+  width: 40%;
+  height: 2px;
+  margin: 60px auto 0 auto;
+  border-radius: 20px;
+
+  background: linear-gradient(
+    90deg,
+    rgba(255,255,255,0),
+    rgba(255,255,255,0.35),
+    rgba(255,255,255,0)
+  );
+}
+
+#about .img-video{
+  height: 300px !important;
+  opacity: 0.92;
+}
+
+/* CONTACT: force cards into a clean row + equal heights */
+.contact-section .box {
+  height: 100%;
+  min-height: 185px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* Add clean spacing between cards */
+.contact-section .row.mb-5 > div {
+  margin-bottom: 18px;
+}
+
+
+
+#about.ftco-section {
+  padding-top: 70px !important;
+  padding-bottom: 70px !important;
+}
+
+
+.ftco-footer p {
+  margin-bottom: 10px !important;
+}
+
+.ftco-footer-social li {
+  margin: 0 10px !important;
+}
+
+#about, #services, #work, #contact {
+  border-top: 1px solid rgba(255,255,255,0.06);
+}
+
+
+.btn-custom {
+  border-radius: 50px !important;
+  padding: 14px 38px !important;
+  letter-spacing: 2px !important;
+}
+
+/* FIX SERVICES SECTION GAP */
+#services.ftco-section {
+  padding-top: 70px !important;
+  padding-bottom: 40px !important;
+}
+
+#services .progress-circle {
+  padding-top: 40px !important;
+  padding-bottom: 0px !important;
+  margin-bottom: 0 !important;
+}
+
+/* CONTACT: enforce visibility + spacing */
+.contact-section .row.mb-5 {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18px;
+  justify-content: center;
+}
+
+.contact-section .row.mb-5 > .col-md-3 {
+  flex: 0 0 calc(50% - 18px); /* 2 per row */
+  max-width: calc(50% - 18px);
+}
+
+@media (max-width: 768px) {
+  .contact-section .row.mb-5 > .col-md-3 {
+    flex: 0 0 100%;
+    max-width: 100%;
   }
 }
 
