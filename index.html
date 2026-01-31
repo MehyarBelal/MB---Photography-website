@@ -393,7 +393,7 @@ else {
     				</div>
     			</div>
     			<div class="col-md-6 col-lg-6 pl-md-5">
-	          <div class="heading-section ftco-animate">
+	          <div class="heading-section ftco-animate mv-reveal">
 	            <h2 class="mb-4">About<br>Mehyar Visuals</h2>
 	            <p>I’m Mehyar - a Melbourne photographer obsessed with real moments.
 I chase light, movement, and the small truths people overlook.
@@ -412,7 +412,7 @@ Nothing staged, nothing forced - just moments as they reveal themselves.
 		            <div class="img img-about-2 mr-2" style="background-image: url(images/IMG_9234.jpg);"></div>
 		            <div class="img img-about-2 ml-2" style="background-image: url(images/IMG_9236.jpg);"></div>
 		          </div>
-		          <blockquote class="blockquote">
+		          <blockquote class="blockquote mv-caption-reveal">
 		          	<p>"I don’t take pictures. I reveal moments that were already speaking."</p>
 		          	<span>&mdash;- Mehyar Visuals</span>
 		          </blockquote>
@@ -1466,6 +1466,47 @@ document.addEventListener("DOMContentLoaded", () => {
     btn.style.transform = "none";
     btn.onmousemove = null;
   }
+});
+</script>
+<script>
+/* ================================
+   MV Scroll Storytelling
+   ================================ */
+document.addEventListener("DOMContentLoaded", () => {
+
+  // REVEAL ON SCROLL
+  const revealEls = document.querySelectorAll(".mv-reveal, .mv-caption-reveal");
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if(entry.isIntersecting){
+        entry.target.classList.add("is-visible");
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.18 });
+
+  revealEls.forEach(el => observer.observe(el));
+
+  // HERO FADE OUT ON SCROLL (cinematic)
+  const heroText = document.querySelector("#home .header-section");
+  const hero = document.querySelector("#home");
+
+  if(hero && heroText){
+    window.addEventListener("scroll", () => {
+      const rect = hero.getBoundingClientRect();
+      const heroHeight = hero.offsetHeight || 1;
+
+      // 0 to 1 as hero scrolls out
+      const progress = Math.min(Math.max(-rect.top / heroHeight, 0), 1);
+
+      // fade out from 0% -> 55% scroll
+      const fade = 1 - Math.min(progress / 0.55, 1);
+
+      heroText.style.opacity = fade.toFixed(3);
+    }, { passive: true });
+  }
+
 });
 </script>
 
@@ -3512,6 +3553,85 @@ html, body {
 #home .btn-custom {
   display: inline-block;
   transition: transform 0.2s ease !important;
+}
+
+#home::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background: linear-gradient(
+    120deg,
+    rgba(255,255,255,0) 0%,
+    rgba(255,255,255,0.05) 45%,
+    rgba(255,255,255,0.12) 50%,
+    rgba(255,255,255,0.05) 55%,
+    rgba(255,255,255,0) 100%
+  );
+  transform: translateX(-120%);
+  animation: mvLightSweep 8s ease-in-out infinite;
+  pointer-events:none;
+  mix-blend-mode: overlay;
+}
+
+@keyframes mvLightSweep{
+  0%{transform: translateX(-120%);}
+  55%{transform: translateX(120%);}
+  100%{transform: translateX(120%);}
+}
+
+/* ================================
+   MV SCROLL STORYTELLING SYSTEM
+   ================================ */
+
+.mv-reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  filter: blur(10px);
+  transition: all 1.25s cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: transform, opacity, filter;
+}
+
+.mv-reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0px);
+  filter: blur(0px);
+}
+
+/* stronger reveal variant (quote caption feel) */
+.mv-caption-reveal {
+  opacity: 0;
+  transform: translateY(38px);
+  filter: blur(14px);
+  transition: all 1.6s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.mv-caption-reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0px);
+  filter: blur(0px);
+}
+
+/* HERO fade out when scrolling */
+#home .header-section {
+  transition: opacity 0.25s linear;
+  will-change: opacity;
+}
+
+/* OPTIONAL: cinematic caption styling for quote */
+#about blockquote.blockquote {
+  position: relative;
+  padding-left: 18px;
+}
+
+#about blockquote.blockquote:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 4px;
+  width: 2px;
+  height: calc(100% - 8px);
+  background: rgba(255,255,255,0.22);
+  border-radius: 99px;
 }
 
 
