@@ -2113,4 +2113,101 @@ html, body {
   color: rgba(255,255,255,0.9);
 }
 
+
+/* ------------------------------ */
+/*   MOBILE IMPROVEMENTS          */
+/* ------------------------------ */
+
+@media only screen and (max-width: 768px) {
+
+    /* GENERAL SPACING */
+    section {
+        padding: 50px 20px !important;
+    }
+
+    /* HERO TITLE FIX */
+    #hero h1, #hero .title {
+        font-size: 32px !important;
+        letter-spacing: 2px;
+    }
+
+    #hero p {
+        font-size: 14px !important;
+        padding: 0 20px;
+    }
+
+    /* ABOUT SECTION */
+    .about-text {
+        font-size: 14px !important;
+        line-height: 1.7;
+        padding: 0 15px;
+        text-align: center !important;
+    }
+
+    .logo-circle img {
+        width: 120px !important;
+        height: auto;
+    }
+
+    /* SERVICES ICONS */
+    .service-box {
+        margin-bottom: 25px;
+    }
+
+    .service-box i {
+        font-size: 32px !important;
+    }
+
+    /* GALLERY FIXES */
+    .gallery-grid {
+        display: grid !important;
+        grid-template-columns: 1fr !important;
+        gap: 12px !important;
+        padding: 0 10px !important;
+    }
+
+    .gallery-grid img {
+        width: 100% !important;
+        height: auto !important;
+        border-radius: 6px !important;
+    }
+
+    /* CONTACT CARDS */
+    .contact-card {
+        margin: 15px 0 !important;
+        padding: 20px !important;
+        border-radius: 10px;
+    }
+
+    .contact-card i {
+        font-size: 22px !important;
+    }
+
+    /* CONTACT FORM */
+    form input, form textarea {
+        width: 100% !important;
+        font-size: 14px !important;
+    }
+
+    form textarea {
+        min-height: 120px !important;
+    }
+
+    .submit-btn {
+        width: 100% !important;
+        text-align: center;
+    }
+
+    /* FOOTER */
+    footer {
+        padding: 40px 0 !important;
+    }
+
+    footer .social-icons i {
+        font-size: 20px !important;
+        margin: 0 8px;
+    }
+}
+
+
 </style>
