@@ -4128,6 +4128,15 @@ html, body {
 
 /* MOBILE: remove left line + center */
 @media (max-width: 768px){
+
+  #work .model.img {
+  box-shadow:
+    0 10px 30px rgba(0, 0, 0, 0.55),
+    0 2px 10px rgba(0, 0, 0, 0.35);
+  transition: transform 0.25s ease, box-shadow 0.25s ease !important;
+
+}
+
   #about .heading-section{
     padding-left: 0 !important;
     text-align: center !important;
@@ -4327,6 +4336,14 @@ html, body {
     rgba(0,0,0,1) 100%
   );
   z-index: 1;
+}
+
+#work .model.img {
+  box-shadow:
+    0 10px 30px rgba(0, 0, 0, 0.55),
+    0 2px 10px rgba(0, 0, 0, 0.35);
+  transition: transform 0.25s ease, box-shadow 0.25s ease !important;
+  border-radius: 10px !important;
 }
 
 
