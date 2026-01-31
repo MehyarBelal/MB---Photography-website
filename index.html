@@ -1542,20 +1542,6 @@ padding:  0px 0 00px !;
 }
 
 /* Universal Gradient Underline for all section titles */
-.section-title::after,
-.heading-section h2::after,
-#work h2::after,
-#about h2::after,
-#services h2::after,
-#contact h2::after {
-    content: "";
-    display: block;
-    width: 60px;          /* << THE FIX: same size everywhere */
-    height: 3px;
-    margin: 10px auto 0;  /* centers it */
-    background: linear-gradient(90deg, #2A2F6A, #3A6FF7, #00D4FF);
-    border-radius: 2px;
-}
 
 
 #about h2 {
@@ -1581,7 +1567,7 @@ padding:  0px 0 00px !;
     padding: 2px;    /* thickness of gradient border */
     border-radius: 8px;
 
-    background: linear-gradient(90deg, #2A2F6A, #3A6FF7, #00D4FF);
+
 
     -webkit-mask: 
         linear-gradient(#fff 0 0) content-box, 
@@ -1593,13 +1579,7 @@ padding:  0px 0 00px !;
 }
 
 /* Force icon colors inside contact section */
-.contact-section .icon span {
-    font-size: 42px !important;
-    background: linear-gradient(90deg, #2A2F6A, #3A6FF7, #00D4FF);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-      box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
-}
+
 
 .form-group input[type="submit"] {
     display: block;
