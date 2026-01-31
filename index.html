@@ -492,10 +492,7 @@ a{
 }
 
 
-#services.ftco-section {
-    padding-top: 1em !important;
-    padding-bottom: 1em !important;
-}
+
 </style>
 		<!-- End About Me Section -->
 
@@ -1692,6 +1689,63 @@ border: 2px solid #E2E2E2 !important;
     bottom: 0 !important;
 }
 
+
+/* =========================
+   GLOBAL SPACING SYSTEM
+   ========================= */
+
+
+/* force every major section to follow the same rhythm */
+
+
+
+
+</style>
+
+
+
+<style>
+  /* =========================
+   FINAL GLOBAL SPACING (CLEAN)
+   ========================= */
+:root{
+  --mv-sectionY: 90px;
+  --mv-sectionYtight: 70px;
+}
+
+#about,
+#services,
+#work,
+#contact{
+  padding-top: var(--mv-sectionY) !important;
+  padding-bottom: var(--mv-sectionY) !important;
+}
+
+#about{
+  padding-top: var(--mv-sectionYtight) !important;
+  padding-bottom: var(--mv-sectionYtight) !important;
+}
+
+/* SECTION VARIATIONS (luxury rhythm) */
+#about{
+  padding-top: 70px !important;
+  padding-bottom: 70px !important;
+}
+
+#services{
+  padding-top: 100px !important;
+  padding-bottom: 100px !important;
+}
+
+#work{
+  padding-top: 60px !important;
+  padding-bottom: 80px !important;
+}
+
+#contact{
+  padding-top: 120px !important;
+  padding-bottom: 120px !important;
+}
 
 
 </style>
