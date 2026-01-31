@@ -1542,6 +1542,20 @@ padding:  0px 0 00px !;
 }
 
 /* Universal Gradient Underline for all section titles */
+.section-title::after,
+.heading-section h2::after,
+#work h2::after,
+#about h2::after,
+#services h2::after,
+#contact h2::after {
+    content: "";
+    display: block;
+    width: 60px;          /* << THE FIX: same size everywhere */
+    height: 3px;
+    margin: 10px auto 0;  /* centers it */
+    background: linear-gradient(90deg, #2A2F6A, #3A6FF7, #00D4FF);
+    border-radius: 2px;
+}
 
 
 #about h2 {
@@ -1567,7 +1581,7 @@ padding:  0px 0 00px !;
     padding: 2px;    /* thickness of gradient border */
     border-radius: 8px;
 
-
+    background: linear-gradient(90deg, #2A2F6A, #3A6FF7, #00D4FF);
 
     -webkit-mask: 
         linear-gradient(#fff 0 0) content-box, 
@@ -1579,7 +1593,13 @@ padding:  0px 0 00px !;
 }
 
 /* Force icon colors inside contact section */
-
+.contact-section .icon span {
+    font-size: 42px !important;
+    background: linear-gradient(90deg, #2A2F6A, #3A6FF7, #00D4FF);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+      box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
+}
 
 .form-group input[type="submit"] {
     display: block;
@@ -2195,7 +2215,7 @@ html, body {
 }
 
 #work .model.img {
-  border-radius: 10px !important;
+  border-radius: 22px !important;
   overflow: hidden !important;
   transform: translateZ(0); /* smoother hover */
 }
@@ -2212,9 +2232,10 @@ html, body {
     padding-bottom: 16px !important;
   }
 
-
+  #work .model.img {
+    border-radius: 16px !important;
+  }
 }
-
 
 /* ============================================
    MV — CSS ONLY EDITORIAL GALLERY (NO HTML CHANGES)
@@ -2258,7 +2279,114 @@ html, body {
   min-height: 280px !important;
   height: auto !important;
 
-  border-radius: 18px
+  border-radius: 18px !important;
+  overflow: hidden !important;
+
+  background-size: cover !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+
+  transform: translateZ(0);
+  transition: transform 0.75s ease, filter 0.75s ease !important;
+}
+
+/* cinematic hover */
+#work .model.img:hover{
+  transform: scale(1.015);
+  filter: grayscale(100%);
+}
+
+/* subtle overlay fade */
+#work .model.img::after{
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0);
+  transition: 0.75s ease;
+  pointer-events: none;
+}
+#work .model.img:hover::after{
+  background: rgba(0,0,0,0.22);
+}
+
+/* ============================================
+   FEATURED “DIFFERENT SIZE” LOOK (CSS ONLY)
+   (visual featured effect – no HTML changes)
+============================================ */
+
+/* featured #1 = bigger & taller */
+#work .row.no-gutters > [class*="col-"]:nth-child(1) .model.img{
+  min-height: 420px !important;
+}
+
+/* featured #2 = tall */
+#work .row.no-gutters > [class*="col-"]:nth-child(2) .model.img{
+  min-height: 360px !important;
+}
+
+/* featured #5 = wide feeling (bigger) */
+#work .row.no-gutters > [class*="col-"]:nth-child(5){
+  transform: scale(1.03);
+  transform-origin: center;
+}
+
+/* give each 3rd image slightly different height (editorial rhythm) */
+#work .row.no-gutters > [class*="col-"]:nth-child(3n) .model.img{
+  min-height: 330px !important;
+}
+#work .row.no-gutters > [class*="col-"]:nth-child(4n) .model.img{
+  min-height: 390px !important;
+}
+
+/* ============================================
+   KEEP YOUR "VIEW" BUTTON WORKING
+============================================ */
+#work .model .icon.image-popup{
+  z-index: 10 !important;
+}
+#work .model.img::before,
+#work .model.img::after{
+  pointer-events: none !important;
+}
+
+/* ============================================
+   RESPONSIVE
+============================================ */
+@media (max-width: 992px){
+  #work .row.no-gutters{
+    column-count: 2;
+    column-gap: 16px;
+  }
+  #work .row.no-gutters > [class*="col-"]{
+    margin-bottom: 16px !important;
+  }
+  #work .model.img{
+    border-radius: 16px !important;
+    min-height: 240px !important;
+  }
+}
+
+@media (max-width: 576px){
+  #work .container-fluid{
+    padding-left: 12px !important;
+    padding-right: 12px !important;
+  }
+
+  #work .row.no-gutters{
+    column-count: 1;
+    column-gap: 0;
+  }
+
+  #work .model.img{
+    min-height: 250px !important;
+    border-radius: 14px !important;
+  }
+
+  /* remove scaling on mobile to avoid awkward edges */
+  #work .row.no-gutters > [class*="col-"]:nth-child(5){
+    transform: none !important;
+  }
+}
 
 
 </style>
