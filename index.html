@@ -2388,5 +2388,192 @@ html, body {
   }
 }
 
+/* ============================
+   MV MOBILE UPGRADE PACK
+   ============================ */
+@media (max-width: 768px) {
+
+  /* --- GLOBAL --- */
+  body {
+    overflow-x: hidden !important;
+  }
+
+  /* reduce section padding */
+  #about, #services, #work, #contact {
+    padding-top: 70px !important;
+    padding-bottom: 70px !important;
+  }
+
+  /* tighter dividers */
+  .mv-divider {
+    margin: 55px auto 0 auto !important;
+    width: 60% !important;
+  }
+
+  /* ============================
+     HERO (HOME) MOBILE FIX
+     ============================ */
+  #home.hero-wrap {
+    min-height: 92vh !important;
+    padding-top: 40px !important;
+    padding-bottom: 40px !important;
+    background-position: 50% 40% !important;
+  }
+
+  .primary-logo {
+    width: 260px !important;
+    margin-bottom: 18px !important;
+  }
+
+  #home .text p {
+    font-size: 14px !important;
+    line-height: 1.7 !important;
+    padding: 0 18px !important;
+    opacity: 0.92;
+  }
+
+  #home .btn-custom {
+    padding: 12px 26px !important;
+    font-size: 12px !important;
+  }
+
+  /* ============================
+     ABOUT MOBILE FIX
+     ============================ */
+  #about h2 {
+    font-size: 26px !important;
+    line-height: 1.15 !important;
+    text-align: center !important;
+  }
+
+  #about p {
+    font-size: 14px !important;
+    line-height: 1.8 !important;
+    text-align: center !important;
+  }
+
+  #about .blockquote {
+    margin-top: 30px !important;
+    text-align: center !important;
+  }
+
+  #about .img-video {
+    height: 210px !important;
+    margin-bottom: 20px !important;
+    opacity: 0.95 !important;
+  }
+
+  /* ============================
+     SERVICES MOBILE FIX
+     ============================ */
+  #services h2 {
+    font-size: 24px !important;
+  }
+
+  #services .services-text {
+    font-size: 14px !important;
+    padding: 0 14px !important;
+  }
+
+  /* make services icons smaller on mobile */
+  #services .services .icon span {
+    font-size: 48px !important;
+  }
+
+  #services .services .heading {
+    font-size: 12px !important;
+    letter-spacing: 2px !important;
+  }
+
+  /* ============================
+     GALLERY MOBILE (BIG FIX)
+     ============================ */
+
+  /* create space around gallery */
+  #work .container-fluid {
+    padding-left: 12px !important;
+    padding-right: 12px !important;
+  }
+
+  #work .row.no-gutters {
+    gap: 12px !important;
+  }
+
+  /* 1-column luxury gallery */
+  #work .col-md-4.ftco-animate {
+    width: 100% !important;
+    max-width: 100% !important;
+    flex: 0 0 100% !important;
+  }
+
+  #work .model {
+    border-radius: 16px !important;
+    overflow: hidden !important;
+  }
+
+  #work .model.img {
+    aspect-ratio: 4 / 3 !important;
+    min-height: auto !important;
+    border-radius: 16px !important;
+  }
+
+  /* make VIEW badge always visible on mobile */
+  #work .model .icon.image-popup {
+    opacity: 1 !important;
+    transform: none !important;
+    bottom: 14px !important;
+    right: 14px !important;
+  }
+
+  /* ============================
+     CONTACT MOBILE FIX
+     ============================ */
+
+  /* compact grid: 2 cards per row */
+  .contact-section .row.mb-5 {
+    gap: 12px !important;
+  }
+
+  .contact-section .row.mb-5 > .col-md-3 {
+    flex: 0 0 calc(50% - 12px) !important;
+    max-width: calc(50% - 12px) !important;
+  }
+
+  .contact-section .box {
+    min-height: 140px !important;
+    padding: 18px !important;
+  }
+
+  .contact-section .icon span {
+    font-size: 32px !important;
+  }
+
+  .contact-section h3 {
+    font-size: 13px !important;
+    margin-bottom: 8px !important;
+  }
+
+  .contact-section p,
+  .contact-section a {
+    font-size: 12px !important;
+    line-height: 1.5 !important;
+  }
+
+  /* contact form */
+  .contact-form {
+    padding: 22px !important;
+    border-radius: 14px !important;
+  }
+
+  .contact-form textarea {
+    height: 120px !important;
+  }
+
+  .contact-submit-btn {
+    width: 100% !important;
+    max-width: 260px !important;
+  }
+}
+
 
 </style>
