@@ -4644,6 +4644,38 @@ nav{
   }
 }
 
+/* ==========================================================
+   MV — MAGNIFIC POPUP: ADD PREMIUM SPACING (NO GREY BAR)
+   ========================================================== */
+
+/* keep the bar removed */
+.mfp-bottom-bar {
+  display: none !important;
+}
+
+/* give the popup content breathing room */
+.mfp-figure {
+  padding: 22px 0 !important;   /* TOP/BOTTOM space */
+  margin: 0 !important;
+}
+
+/* make sure the image itself doesn't touch */
+.mfp-img {
+  padding: 0 !important;
+  margin: 0 auto !important;
+  max-height: calc(100vh - 44px) !important; /* respects spacing */
+  width: auto !important;
+  height: auto !important;
+  object-fit: contain !important;
+  display: block !important;
+}
+
+/* remove leftover background strip */
+.mfp-figure:after {
+  display: none !important;
+}
+
+
 </style>
 
 <script>
