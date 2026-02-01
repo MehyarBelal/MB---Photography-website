@@ -4675,6 +4675,60 @@ nav{
   display: none !important;
 }
 
+/* ==========================================================
+   MV ABOUT LOGO BLOCK — PERFECT CENTER (DESKTOP + MOBILE)
+   Put at VERY BOTTOM of style-final.css
+   ========================================================== */
+
+#about .img-video {
+  /* force true centering */
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+
+  /* the logo background */
+  background-image: url("./images/Web Use (RGB)/PNG/White Submark@4x-8.png") !important;
+  background-repeat: no-repeat !important;
+  background-position: center center !important;
+  background-size: 180px auto !important;
+
+  /* luxury container */
+  height: 360px !important;
+  width: 100% !important;
+  border-radius: 20px !important;
+  overflow: hidden !important;
+
+  /* luxury depth */
+  background-color: rgba(0,0,0,0.15) !important;
+  box-shadow: 0 18px 55px rgba(0,0,0,0.65) !important;
+
+  margin: 0 auto !important;
+}
+
+/* ✅ Desktop refinement */
+@media (min-width: 992px){
+  #about .img-video{
+    height: 350px !important;
+    background-size: 200px auto !important;
+  }
+}
+
+/* ✅ Tablet + mobile */
+@media (max-width: 768px){
+  #about .img-video{
+    height: 260px !important;
+    border-radius: 16px !important;
+    background-size: 145px auto !important;
+  }
+}
+
+/* ✅ Small phones (iPhone SE etc) */
+@media (max-width: 420px){
+  #about .img-video{
+    height: 230px !important;
+    background-size: 130px auto !important;
+  }
+}
 
 
 
