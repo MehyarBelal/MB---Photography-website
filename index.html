@@ -361,6 +361,8 @@ else {
 		  		
 		  				<p class="mb-4"> Cinematic portraits, events, and visual storytelling - captured with intention. Shot in Melbourne and beyond.
 </p>
+
+
 <p class="mt-5">
   <a href="#contact" class="btn-custom">Book a Shoot <span class="ion-ios-arrow-round-forward"></span></a>
 </p>            </div>
@@ -1230,26 +1232,43 @@ Available across the city and surrounding suburbs</p>
 
         <div class="row block-9">
           <div class="col-md-12 ftco-animate">
-            <form style=" box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.2), 0px 4px 5px 0px rgba(0, 0, 0, 0.14), 0px 1px 10px 0px rgba(0, 0, 0, 0.12);
-  transition: box-shadow 0.28s cubic-bezier(0.4, 0, 0.2, 1);" class="contact-form p-4 p-md-5 py-md-5">
-              <div class="form-group">
-                <input type="text" class="form-control" placeholder="Your Name">
-              </div>
-              <div class="form-group">
-                <input type="text" class="form-control" placeholder="Your Email">
-              </div>
-              <div class="form-group">
-                <input type="text" class="form-control" placeholder="Subject">
-              </div>
-              <div class="form-group">
-                <textarea name="" id="" cols="30" rows="7" class="form-control" placeholder="Message"></textarea>
-              </div>
-              <div class="form-group">
-                <input type="submit" value="Send Message" class="btn contact-submit-btn btn-primary py-3 px-5">
-              </div>
-<br>
-			  <p>Based in Melbourne -- available across the city and surrounding suburbs.</p>
-            </form>
+           <form 
+  action="https://formspree.io/f/xbdarokr" 
+  method="POST"
+  style="box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.2), 0px 4px 5px 0px rgba(0, 0, 0, 0.14), 0px 1px 10px 0px rgba(0, 0, 0, 0.12);
+  transition: box-shadow 0.28s cubic-bezier(0.4, 0, 0.2, 1);" 
+  class="contact-form p-4 p-md-5 py-md-5"
+>
+
+  <div class="form-group">
+    <input type="text" name="name" class="form-control" placeholder="Your Name" required>
+  </div>
+
+  <div class="form-group">
+    <input type="email" name="email" class="form-control" placeholder="Your Email" required>
+  </div>
+
+  <div class="form-group">
+    <input type="text" name="subject" class="form-control" placeholder="Shoot Type / Event">
+  </div>
+
+  <div class="form-group">
+    <textarea name="message" cols="30" rows="7" class="form-control" placeholder="Tell me about your shoot"></textarea>
+  </div>
+
+  <!-- hidden settings -->
+  <input type="hidden" name="_subject" value="New enquiry from mehyarvisuals.com">
+  <input type="hidden" name="_captcha" value="false">
+
+  <div class="form-group">
+    <input type="submit" value="Send Message" class="btn contact-submit-btn btn-primary py-3 px-5">
+  </div>
+
+  <br>
+  <p>Based in Melbourne — available across the city and surrounding suburbs.</p>
+
+</form>
+
           </div>
 
       
